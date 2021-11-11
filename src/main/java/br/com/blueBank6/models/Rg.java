@@ -8,10 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
-import org.springframework.lang.Nullable;
 
 @Entity
 @Table(name = "rg")
@@ -23,16 +23,16 @@ public class Rg {
 	private Long id;
 	
 	
-	@Nullable
+	@NotNull
 	@Column(name = "numero_rg", nullable = false, length = 30)
 	private String numeroRg;
 	
-	@Nullable
+	@NotNull
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "data_emissao",nullable = false, columnDefinition = "DATE")
 	private LocalDate dataEmissao;
 	
-	@Nullable
+	@NotNull
 	@Column(name = "orgao_emissor", nullable = false, length = 10)
 	private String orgaoEmissor;
 	
