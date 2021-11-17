@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Transacao")
+@Table(name = "Transacoes")
 public class Transacao {
 
     @Id
@@ -55,11 +55,11 @@ public class Transacao {
         this.tipo = tipo;
     }
 
-    public float getValor() {
+    public BigDecimal getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
 
