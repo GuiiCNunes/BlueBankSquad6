@@ -1,9 +1,11 @@
 package br.com.blueBank6.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -16,14 +18,14 @@ public class Transacao {
     private Long id;
 
     @NotNull
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "data_emissao",nullable = false, columnDefinition = "DATE")
     private LocalDate data;
 
     @Column(name="tipo", nullable = false, length = 10)
     private String tipo;
 
-    private float valor;
+    private BigDecimal valor;
 
     @ManyToOne
     @JoinColumn(name = "id_conta_origem_fk")
