@@ -44,7 +44,7 @@ public class Cliente {
 
 	@CPF
   @NotNull
-	@Column(name = "cpf", nullable = false, length = 14)
+	@Column(name = "cpf", nullable = false, length = 14, unique = true)
 	private String cpf;
 	
 	@NotNull
@@ -58,7 +58,7 @@ public class Cliente {
 
 	@Valid
   @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "id_rg_fk", nullable = false)
+  @JoinColumn(name = "id_rg_fk", nullable = false, unique = true)
   private Rg rg;
 
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,##00.00")
@@ -90,7 +90,7 @@ public class Cliente {
 
 	@Email
   @NotNull
-	@Column(name = "email", nullable = false, length = 50)
+	@Column(name = "email", nullable = false, length = 50, unique = true)
 	private String email;
 
   @NotNull
