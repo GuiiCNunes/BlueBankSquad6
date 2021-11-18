@@ -1,5 +1,7 @@
 package br.com.blueBank6.models;
 
+import java.math.BigDecimal;
+
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
@@ -9,15 +11,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 import org.springframework.lang.Nullable;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
@@ -37,12 +42,13 @@ public class Cliente {
 	@Column(name = "apelido", nullable = true, length = 20)
 	private String apelido;
 
+	@CPF
   @NotNull
 	@Column(name = "cpf", nullable = false, length = 14)
 	private String cpf;
 	
 	@NotNull
-	@DateTimeFormat(iso = ISO.DATE)
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "data_nascimento",nullable = false, columnDefinition = "DATE")
 	private LocalDate dataNascimento;
 	
@@ -50,12 +56,14 @@ public class Cliente {
 	@Column(name = "nome_mae", nullable = false, length = 50)
 	private String nomeMae;
 
+	@Valid
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "id_rg_fk", nullable = false)
   private Rg rg;
 
+	@NumberFormat(style = Style.CURRENCY, pattern = "#,##00.00")
   @NotNull
-	@Column(name = "renda", nullable = false, length = 10)
+	@Column(name = "renda", nullable = false, columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
 	private String renda;
 
   @NotNull
@@ -66,10 +74,12 @@ public class Cliente {
 	@Column(name = "escolaridade", nullable = false, length = 50)
 	private String escolaridade;
 
+	@Valid
   @OneToOne (cascade = CascadeType.ALL)
   @JoinColumn(name = "id_endereco_fk", nullable = false)
   private Endereco endereco;
 
+	@Valid
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "id_conta_fk", nullable = false)
   private Conta conta;
@@ -78,6 +88,7 @@ public class Cliente {
 	@Column(name = "genero", nullable = false, length = 50)
 	private String genero;
 
+	@Email
   @NotNull
 	@Column(name = "email", nullable = false, length = 50)
 	private String email;

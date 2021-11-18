@@ -25,8 +25,8 @@ public class Endereco  {
 	private String cep;
 	
 	@NotNull
-	@Column(name="rua", nullable = false, length = 30)
-	private String rua;
+	@Column(name="logradouro", nullable = false, length = 30)
+	private String logradouro;
 
 	@NotNull
 	@Column(name="bairro", nullable = false, length = 20)
@@ -76,11 +76,11 @@ public class Endereco  {
 	}
 
 	public String getRua() {
-		return rua;
+		return logradouro;
 	}
 
 	public void setRua(String rua) {
-		this.rua = rua;
+		this.logradouro = rua;
 	}
 
 	public String getBairro() {
