@@ -16,8 +16,8 @@ public class Conta {
     private Long conta;
 
     @NotNull
-    @Column(name= "numero", length = 15, nullable = false)
-    private String numero;
+    @Column(name= "numeroConta", length = 15, nullable = false)
+    private String numeroConta;
 
     @NotNull
     @Column(name ="agencia", length = 5, nullable = false)
@@ -33,7 +33,7 @@ public class Conta {
     private BigDecimal saldo;
 
     @NotNull
-    @Column(length = 6, nullable = false)
+    @Column(length = 8, nullable = false)
     private int senha;
 
     public Long getConta() {
@@ -44,15 +44,17 @@ public class Conta {
         this.conta = conta;
     }
 
-    public String getNumero() {
-        return numero;
-    }
+  
 
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
+    public String getNumeroConta() {
+		return numeroConta;
+	}
 
-    public String getAgencia() {
+	public void setNumeroConta(String numeroConta) {
+		this.numeroConta = numeroConta;
+	}
+
+	public String getAgencia() {
         return agencia;
     }
 

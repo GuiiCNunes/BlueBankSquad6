@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
-import org.springframework.lang.Nullable;
+
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -38,12 +38,11 @@ public class Cliente {
 	@Column(name = "nome_completo", nullable = false, length = 50)
 	private String nomeCompleto;
 
-  @Nullable
+	
 	@Column(name = "apelido", nullable = true, length = 20)
 	private String apelido;
 
 	@CPF
-  @NotNull
 	@Column(name = "cpf", nullable = false, length = 14, unique = true)
 	private String cpf;
 	
@@ -56,49 +55,52 @@ public class Cliente {
 	@Column(name = "nome_mae", nullable = false, length = 50)
 	private String nomeMae;
 
-	@Valid
-  @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "id_rg_fk", nullable = false, unique = true)
-  private Rg rg;
-
+ 
+	
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,##00.00")
-  @NotNull
-	@Column(name = "renda", nullable = false, columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
-	private String renda;
+	@Column(name = "renda",  columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
+	private BigDecimal renda;
 
-  @NotNull
+	@NotNull
 	@Column(name = "estado_civil", nullable = false, length = 10)
 	private String estadoCivil;
 
-  @NotNull
+	@NotNull
 	@Column(name = "escolaridade", nullable = false, length = 50)
 	private String escolaridade;
 
-	@Valid
-  @OneToOne (cascade = CascadeType.ALL)
-  @JoinColumn(name = "id_endereco_fk", nullable = false)
-  private Endereco endereco;
 
-	@Valid
-  @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "id_conta_fk", nullable = false)
-  private Conta conta;
 
-  @NotNull
+	@NotNull
 	@Column(name = "genero", nullable = false, length = 50)
 	private String genero;
 
 	@Email
-  @NotNull
 	@Column(name = "email", nullable = false, length = 50, unique = true)
 	private String email;
 
-  @NotNull
+	@NotNull
 	@Column(name = "telefone", nullable = false, length = 20)
 	private String telefone;
+    
+    
+	  @Valid
+	  @OneToOne (cascade = CascadeType.ALL)
+	  @JoinColumn(name = "endereco_id", nullable = false)
+	  private Endereco endereco;
+
+	  @Valid
+	  @OneToOne(cascade = CascadeType.ALL)
+	  @JoinColumn(name = "conta_id", nullable = false)
+	  private Conta conta;
+	  
+	  @Valid
+	  @OneToOne(cascade = CascadeType.ALL)
+	  @JoinColumn(name = "rg_id", nullable = false, unique = true)
+	  private Rg rg;
 
 	public Long getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(Long id) {
@@ -106,7 +108,7 @@ public class Cliente {
 	}
 
 	public String getNomeCompleto() {
-		return this.nomeCompleto;
+		return nomeCompleto;
 	}
 
 	public void setNomeCompleto(String nomeCompleto) {
@@ -114,7 +116,7 @@ public class Cliente {
 	}
 
 	public String getApelido() {
-		return this.apelido;
+		return apelido;
 	}
 
 	public void setApelido(String apelido) {
@@ -122,7 +124,7 @@ public class Cliente {
 	}
 
 	public String getCpf() {
-		return this.cpf;
+		return cpf;
 	}
 
 	public void setCpf(String cpf) {
@@ -130,7 +132,7 @@ public class Cliente {
 	}
 
 	public LocalDate getDataNascimento() {
-		return this.dataNascimento;
+		return dataNascimento;
 	}
 
 	public void setDataNascimento(LocalDate dataNascimento) {
@@ -138,31 +140,23 @@ public class Cliente {
 	}
 
 	public String getNomeMae() {
-		return this.nomeMae;
+		return nomeMae;
 	}
 
 	public void setNomeMae(String nomeMae) {
 		this.nomeMae = nomeMae;
 	}
 
-	public Rg getRg() {
-		return this.rg;
+	public BigDecimal getRenda() {
+		return renda;
 	}
 
-	public void setRg(Rg rg) {
-		this.rg = rg;
-	}
-
-	public String getRenda() {
-		return this.renda;
-	}
-
-	public void setRenda(String renda) {
+	public void setRenda(BigDecimal renda) {
 		this.renda = renda;
 	}
 
 	public String getEstadoCivil() {
-		return this.estadoCivil;
+		return estadoCivil;
 	}
 
 	public void setEstadoCivil(String estadoCivil) {
@@ -170,31 +164,15 @@ public class Cliente {
 	}
 
 	public String getEscolaridade() {
-		return this.escolaridade;
+		return escolaridade;
 	}
 
 	public void setEscolaridade(String escolaridade) {
 		this.escolaridade = escolaridade;
 	}
 
-	public Endereco getEndereco() {
-		return this.endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-
-	public Conta getConta() {
-		return this.conta;
-	}
-
-	public void setConta(Conta conta) {
-		this.conta = conta;
-	}
-
 	public String getGenero() {
-		return this.genero;
+		return genero;
 	}
 
 	public void setGenero(String genero) {
@@ -202,7 +180,7 @@ public class Cliente {
 	}
 
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
 
 	public void setEmail(String email) {
@@ -210,86 +188,42 @@ public class Cliente {
 	}
 
 	public String getTelefone() {
-		return this.telefone;
+		return telefone;
 	}
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	public Cliente id(Long id) {
-		setId(id);
-		return this;
+	public Endereco getEndereco() {
+		return endereco;
 	}
 
-	public Cliente nomeCompleto(String nomeCompleto) {
-		setNomeCompleto(nomeCompleto);
-		return this;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
-	public Cliente apelido(String apelido) {
-		setApelido(apelido);
-		return this;
+	public Conta getConta() {
+		return conta;
 	}
 
-	public Cliente cpf(String cpf) {
-		setCpf(cpf);
-		return this;
+	public void setConta(Conta conta) {
+		this.conta = conta;
 	}
 
-	public Cliente dataNascimento(LocalDate dataNascimento) {
-		setDataNascimento(dataNascimento);
-		return this;
+	public Rg getRg() {
+		return rg;
 	}
 
-	public Cliente nomeMae(String nomeMae) {
-		setNomeMae(nomeMae);
-		return this;
+	public void setRg(Rg rg) {
+		this.rg = rg;
 	}
-
-	public Cliente rg(Rg rg) {
-		setRg(rg);
-		return this;
-	}
-
-	public Cliente renda(String renda) {
-		setRenda(renda);
-		return this;
-	}
-
-	public Cliente estadoCivil(String estadoCivil) {
-		setEstadoCivil(estadoCivil);
-		return this;
-	}
-
-	public Cliente escolaridade(String escolaridade) {
-		setEscolaridade(escolaridade);
-		return this;
-	}
-
-	public Cliente endereco(Endereco endereco) {
-		setEndereco(endereco);
-		return this;
-	}
-
-	public Cliente conta(Conta conta) {
-		setConta(conta);
-		return this;
-	}
-
-	public Cliente genero(String genero) {
-		setGenero(genero);
-		return this;
-	}
-
-	public Cliente email(String email) {
-		setEmail(email);
-		return this;
-	}
-
-	public Cliente telefone(String telefone) {
-		setTelefone(telefone);
-		return this;
-	}
+		
+	  
+	  
+		
 
 }
+
+
+

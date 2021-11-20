@@ -11,20 +11,28 @@ import br.com.blueBank6.repository.ClienteRepository;
 @Service
 public class ClienteService {
 
-	@Autowired
-	private ClienteRepository repository;
 
-	public void save(Cliente cliente) {
-		repository.save(cliente);
-	}
 
-	public void delete(Long id) {
-		repository.deleteById(id);
-	}
+@Autowired
+private ClienteRepository repository;
 
-	public List<Cliente> findAll() {
-		return repository.findAll();
-		// Sort.by(Sort.Direction.ASC, "nome")
-	}
+public void save(Cliente cliente) {
+	repository.save(cliente);
+}
 
+
+
+public void delete(Long id) {
+	repository.deleteById(id);
+}
+
+
+
+
+
+
+public List<Cliente> findAll() {
+	return repository.findAll();
+	// Sort.by(Sort.Direction.ASC, "nome")
+}
 }
