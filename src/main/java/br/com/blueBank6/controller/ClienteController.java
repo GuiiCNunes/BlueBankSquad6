@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.blueBank6.models.Cliente;
 import br.com.blueBank6.service.ClienteService;
 
-@RestController(value = "/")
+@RestController()
 public class ClienteController {
 
 	@Autowired

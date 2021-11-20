@@ -5,6 +5,7 @@ import org.springframework.format.annotation.NumberFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name="contas")
@@ -35,6 +36,9 @@ public class Conta {
     @NotNull
     @Column(length = 8, nullable = false)
     private int senha;
+
+    @OneToMany(mappedBy = "conta") // funcionarios é forte agr
+    private List<Transacao> transacoes;
 
     public Long getConta() {
         return conta;
@@ -84,5 +88,13 @@ public class Conta {
 
     public void setSenha(int senha) {
         this.senha = senha;
+    }
+
+    public List<Transacao> getTransacoes() {
+        return transacoes;
+    }
+
+    public void setTransacoes(List<Transacao> transacoes) {
+        this.transacoes = transacoes;
     }
 }
