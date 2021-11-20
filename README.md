@@ -9,10 +9,9 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 - Vinicius Menolli
 - Jessica Kopps
 
+Tecnologias utilizadas:
 
-
-teste
-
-teste2
-
-testevinicius
+- Spring Boot (Maven e JDK 11)
+- DB Relacional MySQL
+- Swagger
+- Deploy na AWS
