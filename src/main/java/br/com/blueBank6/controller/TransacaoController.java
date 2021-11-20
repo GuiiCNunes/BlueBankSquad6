@@ -30,9 +30,10 @@ public class TransacaoController {
 
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/alterar")
-    public String atualizar(@RequestBody Transacao transacao) {
+    @RequestMapping(method = RequestMethod.PUT, value = "/alterar/{id}")
+    public String atualizar(@PathVariable long id, @RequestBody Transacao transacao) {
         try {
+            transacao.setId(id);
             service.save(transacao);
             return "Transação atualizada com sucesso";
         } catch (Exception e) {

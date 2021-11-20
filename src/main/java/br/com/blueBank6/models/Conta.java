@@ -14,7 +14,7 @@ public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "conta_id")
-    private Long conta;
+    private Long id;
 
     @NotNull
     @Column(name= "numeroConta", length = 15, nullable = false)
@@ -40,15 +40,14 @@ public class Conta {
     @OneToMany(mappedBy = "conta") // funcionarios é forte agr
     private List<Transacao> transacoes;
 
-    public Long getConta() {
-        return conta;
+    public Long getId() {
+        return id;
     }
 
-    public void setConta(Long conta) {
-        this.conta = conta;
+    public void setId(Long conta) {
+        this.id = conta;
     }
 
-  
 
     public String getNumeroConta() {
 		return numeroConta;
