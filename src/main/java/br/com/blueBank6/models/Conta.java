@@ -5,6 +5,7 @@ import org.springframework.format.annotation.NumberFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name="contas")
@@ -13,10 +14,10 @@ public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "conta_id")
-    private Long conta;
+    private Long id;
 
     @NotNull
-    @Column(name= "numeroConta", length = 15, nullable = false)
+    @Column(name= "numero_conta", length = 15, nullable = false)
     private String numeroConta;
 
     @NotNull
@@ -36,25 +37,24 @@ public class Conta {
     @Column(length = 8, nullable = false)
     private int senha;
 
-    public Long getConta() {
-        return conta;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setConta(Long conta) {
-        this.conta = conta;
+    public void setId(Long id) {
+        this.id = id;
     }
-
-  
 
     public String getNumeroConta() {
-		return numeroConta;
-	}
+        return numeroConta;
+    }
 
-	public void setNumeroConta(String numeroConta) {
-		this.numeroConta = numeroConta;
-	}
+    public void setNumeroConta(String numeroConta) {
+        this.numeroConta = numeroConta;
+    }
 
-	public String getAgencia() {
+    public String getAgencia() {
         return agencia;
     }
 

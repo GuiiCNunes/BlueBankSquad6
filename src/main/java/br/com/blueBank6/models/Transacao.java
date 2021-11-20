@@ -3,10 +3,8 @@ package br.com.blueBank6.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -16,24 +14,24 @@ public class Transacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "rg_id")
+    @Column(name = "transacao_id")
     private Long id;
 
-   @NotNull
+    @NotNull
     @JsonFormat(pattern = "dd/MM/yyyy")
-   @Column(name = "data_emissao",nullable = false, columnDefinition = "DATE")
+    @Column(name = "data_emissao",nullable = false, columnDefinition = "DATE")
     private LocalDate data;
 
     @Column(name="tipo", nullable = false, length = 10)
     private String tipo;
 
     @NumberFormat(style = Style.CURRENCY, pattern = "#,##00.00")
-	@Column(name = "renda",  columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
+	@Column(name = "valor",  columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
     private BigDecimal valor;
 
     @ManyToOne
-    @JoinColumn(name = "id_conta_origem_fk")
-    private Conta conta_origem;
+    @JoinColumn(name = "id_conta_origem")
+    private Conta conta;
 
     public Long getId() {
         return id;
@@ -67,12 +65,11 @@ public class Transacao {
         this.valor = valor;
     }
 
-    public Conta getConta_origem() {
-        return conta_origem;
+    public Conta getConta() {
+        return conta;
     }
 
-    public void setConta_origem(Conta conta_origem) {
-        this.conta_origem = conta_origem;
+    public void setConta(Conta conta) {
+        this.conta = conta;
     }
-    
 }
