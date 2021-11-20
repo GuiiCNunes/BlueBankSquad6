@@ -76,7 +76,7 @@ public class Cliente {
 	private String genero;
 
 	@Email
-	@Column(name = "email", nullable = false, length = 50, unique = true)
+	@Column(name = "email", nullable = false, length = 50)
 	private String email;
 
 	@NotNull
@@ -96,7 +96,7 @@ public class Cliente {
 	  
 	  @Valid
 	  @OneToOne(cascade = CascadeType.ALL)
-	  @JoinColumn(name = "rg_id", nullable = false, unique = true)
+	  @JoinColumn(name = "rg_id", nullable = false)
 	  private Rg rg;
 
 	public Long getId() {
