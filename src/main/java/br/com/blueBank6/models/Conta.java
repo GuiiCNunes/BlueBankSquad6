@@ -1,32 +1,40 @@
 package br.com.blueBank6.models;
 
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Entity
-@Table(name="conta")
+@Table(name="contas")
 public class Conta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "conta")
+    @Column(name= "conta_id")
     private Long conta;
-    
-    @Column(name= "numero", length = 45)
-    private String numero;
 
-    @Column(name ="agencia", length = 45)
+    @NotNull
+    @Column(name= "numeroConta", length = 15, nullable = false)
+    private String numeroConta;
+
+    @NotNull
+    @Column(name ="agencia", length = 5, nullable = false)
     private String agencia;
+
 
     @Column(name= "status")
     private Boolean status;
 
-    @Column(name= "saldo")
-    private float saldo;
+    @NotNull
+    @NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#.###00,00")
+    @Column(name= "saldo", nullable = false, columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
+    private BigDecimal saldo;
 
-    @Column(length = 45)
-    private String senha;
-
-    // Conta deve ter referencia à cliente? (cliente_id)
+    @NotNull
+    @Column(length = 8, nullable = false)
+    private int senha;
 
     public Long getConta() {
         return conta;
@@ -36,15 +44,17 @@ public class Conta {
         this.conta = conta;
     }
 
-    public String getNumero() {
-        return numero;
-    }
+  
 
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
+    public String getNumeroConta() {
+		return numeroConta;
+	}
 
-    public String getAgencia() {
+	public void setNumeroConta(String numeroConta) {
+		this.numeroConta = numeroConta;
+	}
+
+	public String getAgencia() {
         return agencia;
     }
 
@@ -60,19 +70,19 @@ public class Conta {
         this.status = status;
     }
 
-    public float getSaldo() {
+    public BigDecimal getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
     }
 
-    public String getSenha() {
+    public int getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(int senha) {
         this.senha = senha;
     }
 }

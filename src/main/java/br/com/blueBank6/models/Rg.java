@@ -10,11 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "rg")
+@Table(name = "rgs")
 public class Rg {
 	
 	@Id
@@ -28,7 +27,7 @@ public class Rg {
 	private String numeroRg;
 	
 	@NotNull
-	@DateTimeFormat(iso = ISO.DATE)
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "data_emissao",nullable = false, columnDefinition = "DATE")
 	private LocalDate dataEmissao;
 	

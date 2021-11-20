@@ -1,10 +1,11 @@
 package br.com.blueBank6.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -25,6 +26,8 @@ public class Transacao {
     @Column(name="tipo", nullable = false, length = 10)
     private String tipo;
 
+    @NumberFormat(style = Style.CURRENCY, pattern = "#,##00.00")
+	@Column(name = "renda",  columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
     private BigDecimal valor;
 
     @ManyToOne
