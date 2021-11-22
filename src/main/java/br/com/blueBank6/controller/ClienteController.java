@@ -32,10 +32,10 @@ public class ClienteController {
 
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value = "/atualizar")
-	public String atualizar(@RequestBody Cliente cliente) {
+	@RequestMapping(method = RequestMethod.PUT, value = "/atualizar/{id}")
+	public String atualizar(@PathVariable long id,@RequestBody Cliente cliente) {
 		try {
-			
+			cliente.setId(id);
 		
 			service.save(cliente);
 			return "Atualizado com sucesso";
