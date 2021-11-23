@@ -1,11 +1,16 @@
 package br.com.blueBank6.models;
 
-import org.springframework.format.annotation.NumberFormat;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.NumberFormat;
 
 @Entity
 @Table(name="contas")
@@ -36,6 +41,8 @@ public class Conta {
     @NotNull
     @Column(length = 8, nullable = false)
     private int senha;
+    
+    
 
 
     public Long getId() {

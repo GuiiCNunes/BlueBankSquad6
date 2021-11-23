@@ -53,6 +53,7 @@ public class ClienteController {
 	@RequestMapping(method = RequestMethod.GET, value = "/listar")
 	public ResponseEntity<List<Cliente>> listar() {
 		return ResponseEntity.ok(service.findAll());
+		
 
 	}
 

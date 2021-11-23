@@ -1,11 +1,12 @@
 package br.com.blueBank6.service;
 
-import br.com.blueBank6.models.Transacao;
-import br.com.blueBank6.repository.TransacaoRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.math.BigDecimal;
-import java.util.List;
+
+import br.com.blueBank6.models.Transacao;
+import br.com.blueBank6.repository.TransacaoRepository;
 
 @Service
 public class TransacaoService {
@@ -20,5 +21,8 @@ public class TransacaoService {
     public List<Transacao> findAll() {
         return repository.findAll();
     }
+    
+   
 
 }
+
