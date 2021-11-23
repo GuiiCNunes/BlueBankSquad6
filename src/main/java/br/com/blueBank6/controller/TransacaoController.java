@@ -30,7 +30,7 @@ public class TransacaoController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/lista")
-    public void listar() {
-        service.findAll();
+    public List<Transacao> listar() {
+        return service.findAll();
     }
 }

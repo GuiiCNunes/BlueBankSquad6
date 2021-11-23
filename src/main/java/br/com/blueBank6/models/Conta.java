@@ -37,7 +37,6 @@ public class Conta {
     @Column(length = 8, nullable = false)
     private int senha;
 
-
     public Long getId() {
         return id;
     }
