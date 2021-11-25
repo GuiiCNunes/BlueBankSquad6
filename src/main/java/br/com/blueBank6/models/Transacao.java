@@ -54,7 +54,7 @@ public class Transacao {
     }
 
     public void setTipo(String tipo) {
-        this.tipo = tipo;
+        this.tipo = tipo.toLowerCase();
     }
 
     public BigDecimal getValor() {

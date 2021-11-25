@@ -19,12 +19,6 @@ public class TransacaoService {
     public void save(Transacao transacao) {
         contaService.setSaldo(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId());
         repository.save(transacao);
-//        Conta conta = contaRepository.getById(transacao.getConta().getId());
-//        System.out.println(conta.getSaldo());
-//        BigDecimal novoSaldo = conta.getSaldo().add(transacao.getValor());
-//        conta.setSaldo(novoSaldo);
-//        contaRepository.save(conta);
-
     }
 
     public List<Transacao> findAll() {
