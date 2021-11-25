@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+import java.util.List;
 import br.com.blueBank6.models.Transacao;
 import br.com.blueBank6.repository.TransacaoRepository;
 
@@ -18,8 +20,13 @@ public class TransacaoService {
 		repository.save(transacao);
 	}
 
-	public static void save(Transacao transacao) {
-	}
+  @Autowired
+  private ContaService contaService;
+
+  public void save(Transacao transacao) {
+      contaService.setSaldo(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId());
+      repository.save(transacao);
+  }
 
 	public List<Transacao> getTransacao() {
 		return repository.findAll();
