@@ -11,18 +11,18 @@ import br.com.blueBank6.repository.TransacaoRepository;
 @Service
 public class TransacaoService {
 
-    @Autowired
-    private TransacaoRepository repository;
+	@Autowired
+	private TransacaoRepository repository;
 
-    public void save(Transacao transacao) {
-        repository.save(transacao);
-    }
+	public void saveTransacao(Transacao transacao) {
+		repository.save(transacao);
+	}
 
-    public List<Transacao> findAll() {
-        return repository.findAll();
-    }
-    
-   
+	public static void save(Transacao transacao) {
+	}
+
+	public List<Transacao> getTransacao() {
+		return repository.findAll();
+	}
 
 }
-

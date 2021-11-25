@@ -20,10 +20,10 @@ public class ClienteController {
 	private ClienteService service;
 
 	@RequestMapping(method = RequestMethod.POST, value = "/salvar")
-	public String salvar( @RequestBody Cliente cliente) {
+	public String salvar(@RequestBody Cliente cliente) {
 		try {
 			service.save(cliente);
-			return "cadastro com sucesso";
+			return "Cliente cadastrado com sucesso";
 
 		} catch (Exception e) {
 			String msg = e.getMessage();
@@ -31,12 +31,12 @@ public class ClienteController {
 		}
 
 	}
-	
+
 	@RequestMapping(method = RequestMethod.PUT, value = "/atualizar/{id}")
-	public String atualizar(@PathVariable long id,@RequestBody Cliente cliente) {
+	public String atualizar(@PathVariable long id, @RequestBody Cliente cliente) {
 		try {
 			cliente.setId(id);
-		
+
 			service.save(cliente);
 			return "Atualizado com sucesso";
 
@@ -46,25 +46,16 @@ public class ClienteController {
 		}
 
 	}
-	
-	
-	
 
 	@RequestMapping(method = RequestMethod.GET, value = "/listar")
 	public ResponseEntity<List<Cliente>> listar() {
 		return ResponseEntity.ok(service.findAll());
-		
 
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/delete/{id}")
-	public String delete(@PathVariable long id) {
+	public String deletar(@PathVariable long id) {
 		service.delete(id);
-		return "Deletado com sucesso";
+		return "Cliente deletado com sucesso";
 	}
-
-//		@ModelAttribute("ufs")
-//		public Uf[] listaDeestados() {
-//			return Uf.values();
-//		}
 }
