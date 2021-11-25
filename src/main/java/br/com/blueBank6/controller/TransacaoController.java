@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -21,6 +24,7 @@ public class TransacaoController {
     @RequestMapping(method = RequestMethod.POST, value = "/salvar")
     public String salvar(@RequestBody Transacao transacao) {
         try {
+            transacao.setData(LocalDateTime.now());
             service.save(transacao);
             return "Transacão concluída.";
         } catch (Exception e) {

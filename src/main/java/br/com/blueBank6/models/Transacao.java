@@ -7,6 +7,7 @@ import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Transacoes")
@@ -18,9 +19,8 @@ public class Transacao {
     private Long id;
 
     @NotNull
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    @Column(name = "data_emissao",nullable = false, columnDefinition = "DATE")
-    private LocalDate data;
+    @Column(name = "data_emissao",nullable = false, columnDefinition = "DATETIME")
+    private LocalDateTime data;
 
     @Column(name="tipo", nullable = false, length = 10)
     private String tipo;
@@ -41,11 +41,11 @@ public class Transacao {
         this.id = id;
     }
 
-    public LocalDate getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
