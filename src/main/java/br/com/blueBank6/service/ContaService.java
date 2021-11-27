@@ -26,11 +26,10 @@ public class ContaService {
         Conta conta = this.get(id);
         BigDecimal novoSaldo;
         switch (tipo) {
-            case "creditar":
             case "deposito":
                 novoSaldo = conta.getSaldo().add(valor);
                 break;
-            case "debitar":
+            case "transferir":
             case  "saque":
                 novoSaldo = conta.getSaldo().subtract(valor);
                 break;
@@ -43,8 +42,7 @@ public class ContaService {
     }
 
     public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) {
-        setSaldo(tipo, valor, idOrigem);
-        String tipoDestino = (tipo.equals("debitar")) ? "creditar" : "debitar";
-        setSaldo(tipoDestino, valor, idDestino);
+        setSaldo("transferir", valor, idOrigem);
+        setSaldo("deposito", valor, idDestino);
     }
 }
