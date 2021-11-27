@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import br.com.blueBank6.models.Transacao;
 import br.com.blueBank6.repository.TransacaoRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TransacaoService {
@@ -20,17 +21,18 @@ public class TransacaoService {
 		repository.save(transacao);
 	}
 
-  @Autowired
-  private ContaService contaService;
+	@Autowired
+	private ContaService contaService;
 
-  public void save(Transacao transacao) {
+	@Transactional
+	public void save(Transacao transacao) {
 	  if (transacao.getDestino() == null) {
 		  contaService.setSaldo(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId());
 	  } else {
 		  contaService.gerenciarContas(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId(), transacao.getDestino().getId());
 	  }
-      repository.save(transacao);
-  }
+	  repository.save(transacao);
+	}
 
 	public List<Transacao> getTransacao() {
 		return repository.findAll();
