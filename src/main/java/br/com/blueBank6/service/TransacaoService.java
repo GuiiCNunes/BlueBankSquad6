@@ -24,7 +24,11 @@ public class TransacaoService {
   private ContaService contaService;
 
   public void save(Transacao transacao) {
-      contaService.setSaldo(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId());
+	  if (transacao.getDestino() == null) {
+		  contaService.setSaldo(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId());
+	  } else {
+		  contaService.gerenciarContas(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId(), transacao.getDestino().getId());
+	  }
       repository.save(transacao);
   }
 
