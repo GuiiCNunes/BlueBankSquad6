@@ -20,15 +20,15 @@ public class TransacaoController {
 	@Autowired
 	private TransacaoService transacaoservice;
 
-	@RequestMapping(method = RequestMethod.POST, value = "/salvar")
-	public String salvar(@RequestBody Transacao transacao) {
+	@PostMapping("/salvar")
+	public ResponseEntity<Object> SalvarTransacao(@RequestBody Transacao transacao) {
 		try {
 			transacao.setData(LocalDateTime.now());
 			transacaoservice.save(transacao);
-			return "Transacão concluída.";
+			return new ResponseEntity<>("Transação efetuada com sucesso", HttpStatus.CREATED);
 		} catch (Exception e) {
 			String msg = e.getMessage();
-			return msg;
+			return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
 		}
 	}
 

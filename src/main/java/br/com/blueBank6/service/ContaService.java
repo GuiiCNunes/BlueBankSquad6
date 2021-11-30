@@ -29,6 +29,7 @@ public class ContaService {
             case "deposito":
                 novoSaldo = conta.getSaldo().add(valor);
                 break;
+            case "transferir":
             case  "saque":
                 novoSaldo = conta.getSaldo().subtract(valor);
                 break;
@@ -38,5 +39,10 @@ public class ContaService {
         }
         conta.setSaldo(novoSaldo);
         repository.save(conta);
+    }
+
+    public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) {
+        setSaldo("transferir", valor, idOrigem);
+        setSaldo("deposito", valor, idDestino);
     }
 }

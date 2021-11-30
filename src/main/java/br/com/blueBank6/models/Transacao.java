@@ -1,12 +1,10 @@
 package br.com.blueBank6.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -32,6 +30,10 @@ public class Transacao {
     @ManyToOne
     @JoinColumn(name = "id_conta_origem")
     private Conta conta;
+
+    @ManyToOne
+    @JoinColumn(name = "id_conta_destino")
+    private Conta destino;
 
     public Long getId() {
         return id;
@@ -71,5 +73,13 @@ public class Transacao {
 
     public void setConta(Conta conta) {
         this.conta = conta;
+    }
+
+    public Conta getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Conta destino) {
+        this.destino = destino;
     }
 }

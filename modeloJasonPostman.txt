@@ -97,3 +97,26 @@ Modelo para Put/Update
         }
     }
 
+
+Modelo para Trasação POST
+
+{
+    "tipo": "deposito",
+    "valor": 1000.0,
+    "conta": {
+        "id": 1
+    }
+}
+
+Modelo para Transferencia POST
+
+{
+    "tipo": "debitar",
+    "valor": 1000.0,
+    "conta": {
+        "id": 1
+    },
+    "destino": {
+        "id": 3
+    }
+}
