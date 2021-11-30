@@ -29,6 +29,40 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Table(name = "clientes")
 public class Cliente {
 	
+	
+	public Cliente() {
+		
+	}
+	
+
+	
+	public Cliente( String nomeCompleto, String apelido,  String cpf,
+		 LocalDate dataNascimento,  String nomeMae, BigDecimal renda,  String estadoCivil,
+		 String escolaridade,  String genero,  String email,  String telefone,
+		 Endereco endereco,  Conta conta,  Rg rg) {
+	
+	
+	this.nomeCompleto = nomeCompleto;
+	this.apelido = apelido;
+	this.cpf = cpf;
+	this.dataNascimento = dataNascimento;
+	this.nomeMae = nomeMae;
+	this.renda = renda;
+	this.estadoCivil = estadoCivil;
+	this.escolaridade = escolaridade;
+	this.genero = genero;
+	this.email = email;
+	this.telefone = telefone;
+	this.endereco = endereco;
+	this.conta = conta;
+	this.rg = rg;
+}
+
+
+
+
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cliente_id")
