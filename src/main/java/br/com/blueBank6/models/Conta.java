@@ -2,10 +2,14 @@ package br.com.blueBank6.models;
 
 import java.math.BigDecimal;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 @Entity
@@ -17,24 +21,33 @@ public class Conta {
     @Column(name= "conta_id")
     private Long id;
 
-    @Column(name= "numero_conta")
-    private Long numeroConta;
+
+    @Column(name= "numero_conta", length = 15)
+    private int numeroConta  ;
 
 
-    @Column(name ="agencia")
-    @org.hibernate.annotations.ColumnDefault("100")
-    private double agencia;
+
+    @Column(name ="agencia", length = 5, nullable = false)
+    private String agencia = "0001"  ;
+
+
 
     @Column(name= "status")
-    private Boolean status;
+    private Boolean status = true;
+
 
     @NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#.###00,00")
-    @Column(name= "saldo")
-    private BigDecimal saldo;
+    private BigDecimal saldo = new BigDecimal(0);
+
+
 
     @NotNull
     @Column(length = 8, nullable = false)
     private int senha;
+
+
+
+
 
 
     public Long getId() {
@@ -45,20 +58,21 @@ public class Conta {
         this.id = id;
     }
 
-    public Long getNumeroConta() {
-        return numeroConta;
+    public int  getNumeroConta() {
+        return numeroConta ;
     }
 
-    public void setNumeroConta(Long numeroConta) {
-        this.numeroConta = numeroConta;
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta +1;
     }
 
-    public double getAgencia() {
+    public String  getAgencia() {
         return agencia;
     }
 
-    public void setAgencia(double agencia) {
+    public void setAgencia(String  agencia) {
         this.agencia = agencia;
+
     }
 
     public Boolean getStatus() {
@@ -84,4 +98,6 @@ public class Conta {
     public void setSenha(int senha) {
         this.senha = senha;
     }
+
+
 }

@@ -3,18 +3,18 @@
 Modelo de Post/save
 
 {
+    http://localhost:5000/salvar
     
-    
-"nomeCompleto" : " Alan Luiz teixeira ",
-"apelido" : "Line",
-"cpf" : "65145017022",
-"dataNascimento" : "03/05/1988",
+    "nomeCompleto" : " Miromar Junior ",
+"apelido" : "Jun",
+"cpf" : "18160239068",
+"dataNascimento" : "03/05/1985",
 "nomeMae" : "MARIA",
-"renda" : "59000",
+"renda" : "15000",
 "estadoCivil" : "Casado",
 "escolaridade" : "Superior Completo",
 "genero" : "Masculino",
-"email" : "miromaraa@gmail.com",
+"email" : "miromara@gmail.com",
 "telefone" : "62 994026363",
 "endereco": {
             "cep": "74215020",
@@ -31,24 +31,19 @@ Modelo de Post/save
 
 "rg" : {
             
-            "numeroRg": "123a56",
+            "numeroRg": "001",
             "dataEmissao": "01/01/2010",
             "orgaoEmissor": "SSP-GO"
             
         },
 
         "conta" : {
-            
-            "numeroConta": "002215-5",
-            "agencia": "7592",
-            "status": "false",
-            "saldo": "8000",
-            "senha": "321654"
+             "status": "true",
+              "senha": "321654"
 
             
         }
-
-
+   
 }
 
 
@@ -56,44 +51,50 @@ Modelo de Post/save
 Modelo para Put/Update
 
  {
-   
-       "id"  : "1",
-        "nomeCompleto": " qwa Luiz teixeira ",
-        "apelido": "Line",
-        "cpf": "02685252185",
-        "dataNascimento": "03/05/1988",
-        "nomeMae": "MARIA",
-        "renda": 59000.00,
-        "estadoCivil": "Casado",
-        "escolaridade": "Superior Completo",
-        "genero": "Masculino",
-        "email": "miromaar@gmail.com",
-        "telefone": "62 994026363",
-        "endereco": {
-            "id": 1,
+   http://localhost:5000/atualizar/1
+            
+       
+"nomeCompleto" : " Miromar Junior ",
+"apelido" : "Jun",
+"cpf" : "52595621009",
+"dataNascimento" : "03/05/1985",
+"nomeMae" : "MARIA",
+"renda" : "15000",
+"estadoCivil" : "Casado",
+"escolaridade" : "Superior Completo",
+"genero" : "Masculino",
+"email" : "miromara@gmail.com",
+"telefone" : "62 994026363",
+"endereco": {
             "cep": "74215020",
             "logradouro": "Av T7",
             "bairro": "JD America",
-            "numero": 1592,
+            "numero": "1592",
             "cidade": "APARECIDA DE GOIANIA",
             "uf": "GO",
             "pais": "Brasil",
             "complemento": "qd 50 casa 26 ",
             "pontoReferencia": "Prox a escola"
-        },
-        "conta": {
-            "conta": 1,
-            "numeroConta": "002215-5",
-            "agencia": "7592",
-            "status": false,
-            "saldo": 8000.00,
-            "senha": 321654
-        },
-        "rg": {
-            "id": 1,
-            "numeroRg": "45985620",
+},
+
+
+"rg" : {
+            
+            "numeroRg": "001",
             "dataEmissao": "01/01/2010",
             "orgaoEmissor": "SSP-GO"
+            
+        },
+
+        "conta" : {
+            
+           
+            
+            "status": "true",
+            
+            "senha": "321654"
+
+            
         }
     }
 
