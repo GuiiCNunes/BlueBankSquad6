@@ -1,12 +1,12 @@
 package br.com.blueBank6.service;
 
-import br.com.blueBank6.models.Conta;
-import br.com.blueBank6.repository.ContaRepository;
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-import java.util.List;
+import br.com.blueBank6.models.Conta;
+import br.com.blueBank6.repository.ContaRepository;
 
 @Service
 public class ContaService {
@@ -18,6 +18,7 @@ public class ContaService {
         repository.save(conta);
     }
 
+    
     public Conta get(Long id) {
         return repository.findById(id).get();
     }
@@ -40,6 +41,12 @@ public class ContaService {
         conta.setSaldo(novoSaldo);
         repository.save(conta);
     }
+    
+   
+    
+    
+    
+    
 
     public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) {
         setSaldo("transferir", valor, idOrigem);

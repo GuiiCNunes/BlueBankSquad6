@@ -33,5 +33,10 @@ public class TransacaoService {
 	public List<Transacao> getTransacao() {
 		return repository.findAll();
 	}
+	
+	
+	
+	
+	
 
 }
