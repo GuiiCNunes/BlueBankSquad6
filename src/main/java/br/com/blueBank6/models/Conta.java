@@ -2,14 +2,10 @@ package br.com.blueBank6.models;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 @Entity
@@ -21,28 +17,25 @@ public class Conta {
     @Column(name= "conta_id")
     private Long id;
 
-    @NotNull
-    @Column(name= "numero_conta", length = 15, nullable = false)
-    private String numeroConta;
+    @Column(name= "numero_conta")
+    private Long numeroConta;
 
-    @NotNull
-    @Column(name ="agencia", length = 5, nullable = false)
-    private String agencia;
 
+    @Column(name ="agencia")
+    @org.hibernate.annotations.ColumnDefault("100")
+    private double agencia;
 
     @Column(name= "status")
     private Boolean status;
 
-    @NotNull
     @NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#.###00,00")
-    @Column(name= "saldo", nullable = false, columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
+    @Column(name= "saldo")
     private BigDecimal saldo;
 
     @NotNull
     @Column(length = 8, nullable = false)
     private int senha;
-    
-    
+
 
     public Long getId() {
         return id;
@@ -52,19 +45,19 @@ public class Conta {
         this.id = id;
     }
 
-    public String getNumeroConta() {
+    public Long getNumeroConta() {
         return numeroConta;
     }
 
-    public void setNumeroConta(String numeroConta) {
+    public void setNumeroConta(Long numeroConta) {
         this.numeroConta = numeroConta;
     }
 
-    public String getAgencia() {
+    public double getAgencia() {
         return agencia;
     }
 
-    public void setAgencia(String agencia) {
+    public void setAgencia(double agencia) {
         this.agencia = agencia;
     }
 
