@@ -47,7 +47,8 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | GET    | <BASE_URL>/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
 | GET    | <BASE_URL>/delete/{id}       | Deletar clientes pelo ID  |
 
-- Amazon Simple Notification Service (SNS):
+- Amazon Simple Notification Service (SNS): <br>
+
 |  Caminho                        | Uso                                  |
 | :---                            | :---                                 |
 | <BASE_URL>/addInscricao/{email} | Mandar email para incrição no SNS    |
