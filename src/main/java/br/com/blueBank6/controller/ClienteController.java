@@ -65,9 +65,7 @@ public class ClienteController {
 	@RequestMapping(method = RequestMethod.GET, value = "/listar/cpf/{cpf}")
 	public List<Cliente> listarCpf(@PathVariable String cpf) {
 		return service.findByCpf(cpf);
-		
 	}
-	
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/delete/{id}")
 	public String deletar(@PathVariable long id) {
