@@ -14,7 +14,7 @@ public class AwsSnsController {
 	@Autowired
 	private AmazonSNSClient snsClient;
 
-	String TOPIC_ARN = "";
+	String TOPIC_ARN = "arn:aws:sns:us-east-1:965934840569:SQ6T2";
 
 	@GetMapping("/addSubscription/{email}")
 	public String addSubscription(@PathVariable String email) {
@@ -31,10 +31,10 @@ public class AwsSnsController {
 	}
 
 	private String buildEmailBody(){
-		return "Querido cliente,\n" +
+		return "Recebemos o seu cadastro!,\n" +
 				"\n" +
 				"\n" +
-				"Pague o que você deve, do contrário o serasa vai te pegar";
+				"Você já faz parte do Blue Bank. Estamos muito felizes que você esteja fazendo parte disso com a gente!";
 	}
 
 }

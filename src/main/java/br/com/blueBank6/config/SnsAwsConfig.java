@@ -1,7 +1,4 @@
-
-
 package br.com.blueBank6.config;
-
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -11,20 +8,12 @@ import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@EnableSwagger2
-@EnableWebMvc
 @Configuration
 public class SnsAwsConfig {
 
-	public static final String SECRET_KEY = "";
-	public static final String ACCESS_KEY = "";
+	public static final String SECRET_KEY = "jNuaISJThRWhawa8k08PPFAhsTsEdvgRJoNOkQWH";
+	public static final String ACCESS_KEY = "AKIA6BZRT7L43YUYEIUP";
 
 
 	@Bean
