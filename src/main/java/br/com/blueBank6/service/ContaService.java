@@ -1,5 +1,6 @@
 package br.com.blueBank6.service;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +34,13 @@ public class ContaService {
         return repository.findById(id).get();
     }
 
-    public void setSaldo(String tipo, BigDecimal valor, Long id) {
+    public void checarSaldo(BigDecimal atual, BigDecimal saida) throws IOException {
+        if ( atual.compareTo(saida) == -1 ) throw new IOException("Saldo insuficiente");
+    }
+
+    public void setSaldo(String tipo, BigDecimal valor, Long id) throws IOException {
         Conta conta = this.get(id);
+        checarSaldo(conta.getSaldo(), valor);
         BigDecimal novoSaldo;
         switch (tipo) {
             case "deposito":
@@ -52,7 +58,7 @@ public class ContaService {
         repository.save(conta);
     }
 
-    public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) {
+    public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) throws IOException {
         setSaldo("transferir", valor, idOrigem);
         setSaldo("deposito", valor, idDestino);
     }
