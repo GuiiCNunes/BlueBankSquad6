@@ -63,7 +63,7 @@ public class Conta {
     }
 
     public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta +1;
+        this.numeroConta = numeroConta;
     }
 
     public String  getAgencia() {
