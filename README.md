@@ -51,7 +51,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 
 |  Caminho                        | Uso                                  |
 | :---                            | :---                                 |
-| <BASE_URL>/addInscricao/{email} | Mandar email para incrição no SNS    |
+| <BASE_URL>/addInscricao/{email} | Mandar email para inscrição no SNS    |
 | <BASE_URL>/enviarNotificacao    | Mandar email para emails cadastrados |
 
 
