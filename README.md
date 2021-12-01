@@ -29,4 +29,36 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
   ```
   ./mvnw clean install -DskipTests
   ```
+- Rodar a aplicação:
+```
+???
+```
+- URL para acesso local:
+  - http://localhost:5000
+
+## Endpoints:
+
+| Método |  Caminho                     | Uso                       |
+| :---   | :---                         | :---                      |
+| POST   | <BASE_URL>/salvar            | Cadastrar cliente         |
+| POST   | <BASE_URL>/atualizar/{id}    | Atualizar dados cadastrados dos clientes por ID|
+| GET    | <BASE_URL>/listar            | Listar todos os clientes  |
+| GET    | <BASE_URL>/listar{id}        | Listar clientes pelo ID   |
+| GET    | <BASE_URL>/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
+| GET    | <BASE_URL>/delete/{id}       | Deletar clientes pelo ID  |
+
+- Amazon Simple Notification Service (SNS):
+|  Caminho                        | Uso                                  |
+| :---                            | :---                                 |
+| <BASE_URL>/addInscricao/{email} | Mandar email para incrição no SNS    |
+| <BASE_URL>/enviarNotificacao    | Mandar email para emails cadastrados |
+
+
+## Acessar a documentação (Swagger):
+- <BASE_URL>/swagger-ui.html#
+
+## Diagrama de Entidade Relacionamento (DER):
+- IMAGEM DIAGRAMA DB
+
+
 

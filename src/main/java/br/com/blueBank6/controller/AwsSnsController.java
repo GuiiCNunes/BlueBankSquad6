@@ -16,14 +16,14 @@ public class AwsSnsController {
 
 	String TOPIC_ARN = "";
 
-	@GetMapping("/addSubscription/{email}")
+	@GetMapping("/addInscricao/{email}")
 	public String addSubscription(@PathVariable String email) {
 		SubscribeRequest request = new SubscribeRequest(TOPIC_ARN, "email", email);
 		snsClient.subscribe(request);
 		return "Subscription request está pendente. Para confirmar, verifique seu email:" + email;
 	}
 
-	@GetMapping("/sendNotification")
+	@GetMapping("/enviarNotificacao")
 	public String publishMessageToTopic(){
 		PublishRequest publishRequest = new PublishRequest(TOPIC_ARN, buildEmailBody(), "Notification: Network connectivity issue");
 		snsClient.publish(publishRequest);
