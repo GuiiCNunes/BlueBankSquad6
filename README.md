@@ -59,7 +59,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 - <BASE_URL>/swagger-ui.html#
 
 ## Diagrama de Entidade Relacionamento (DER):
-<img src="./db/der.png" width="100%"/>
+<img src="./db/der.png" width="100%" />
 
 
 
