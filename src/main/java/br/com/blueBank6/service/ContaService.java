@@ -17,8 +17,18 @@ public class ContaService {
     public void save(Conta conta) {
         repository.save(conta);
     }
-
     
+    public int getUltimaConta() {
+        int numeroConta;
+        if (repository.count() > 0) {
+            int ultimaConta = repository.findTopByOrderByIdDesc().getNumeroConta();
+            numeroConta = ultimaConta + 1;
+        } else {
+            numeroConta = 1;
+        }
+        return numeroConta;
+    }
+
     public Conta get(Long id) {
         return repository.findById(id).get();
     }
@@ -41,12 +51,6 @@ public class ContaService {
         conta.setSaldo(novoSaldo);
         repository.save(conta);
     }
-    
-   
-    
-    
-    
-    
 
     public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) {
         setSaldo("transferir", valor, idOrigem);
