@@ -16,9 +16,7 @@ public class ClienteService {
 	private ClienteRepository repository;
 
 	public void save(Cliente cliente) {
-		
 		repository.save(cliente);
-		
 	}
 
 	public void delete(Long id) {
@@ -27,25 +25,18 @@ public class ClienteService {
 
 	public List<Cliente> findAll() {
 		return repository.findAll();
-		//return repository.find();
-		// Sort.by(Sort.Direction.ASC, "nome")
 	}
-	
+
 	public void findyByCpf(String cpf) {
 		repository.findByCpf(cpf);
 	}
-	
+
 	public Optional<Cliente> findyById(Long id) {
-		
-		return  repository.findById(id);
-	}
-	public List<Cliente> findByCpf(String cpf) {
-		
-		return  repository.findByCpf(cpf);
+		return repository.findById(id);
 	}
 
-	
-	
-	
-	
+	public List<Cliente> findByCpf(String cpf) {
+		return repository.findByCpf(cpf);
+	}
+
 }

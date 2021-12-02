@@ -20,23 +20,17 @@ public class TransacaoService {
 
 	@Transactional
 	public void save(Transacao transacao) {
-	  if (transacao.getDestino() == null) {
-		  contaService.setSaldo(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId());
-	  } else {
-		  contaService.gerenciarContas(
-				  transacao.getTipo(), transacao.getValor(), transacao.getConta().getId(), transacao.getDestino().getId()
-		  );
-	  }
-	  repository.save(transacao);
+		if (transacao.getDestino() == null) {
+			contaService.setSaldo(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId());
+		} else {
+			contaService.gerenciarContas(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId(),
+					transacao.getDestino().getId());
+		}
+		repository.save(transacao);
 	}
 
 	public List<Transacao> getTransacao() {
 		return repository.findAll();
 	}
-	
-	
-	
-	
-	
 
 }

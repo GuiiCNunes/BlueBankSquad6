@@ -13,91 +13,78 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.NumberFormat;
 
 @Entity
-@Table(name="contas")
+@Table(name = "contas")
 public class Conta {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "conta_id")
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "conta_id")
+	private Long id;
 
+	@Column(name = "numero_conta", length = 15)
+	private int numeroConta;
 
-    @Column(name= "numero_conta", length = 15)
-    private int numeroConta  ;
+	@Column(name = "agencia", length = 5, nullable = false)
+	private String agencia = "0001";
 
+	@Column(name = "status")
+	private Boolean status = true;
 
+	@NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#.###00,00")
+	private BigDecimal saldo = new BigDecimal(0);
 
-    @Column(name ="agencia", length = 5, nullable = false)
-    private String agencia = "0001"  ;
+	@NotNull
+	@Column(length = 8, nullable = false)
+	private int senha;
 
+	
+	public Long getId() {
+		return id;
+	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    @Column(name= "status")
-    private Boolean status = true;
+	public int getNumeroConta() {
+		return numeroConta;
+	}
 
+	public void setNumeroConta(int numeroConta) {
+		this.numeroConta = numeroConta + 1;
+	}
 
-    @NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#.###00,00")
-    private BigDecimal saldo = new BigDecimal(0);
+	public String getAgencia() {
+		return agencia;
+	}
 
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
 
+	}
 
-    @NotNull
-    @Column(length = 8, nullable = false)
-    private int senha;
+	public Boolean getStatus() {
+		return status;
+	}
 
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
 
+	public BigDecimal getSaldo() {
+		return saldo;
+	}
 
+	public void setSaldo(BigDecimal saldo) {
+		this.saldo = saldo;
+	}
 
+	public int getSenha() {
+		return senha;
+	}
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int  getNumeroConta() {
-        return numeroConta ;
-    }
-
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta +1;
-    }
-
-    public String  getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(String  agencia) {
-        this.agencia = agencia;
-
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
-    public BigDecimal getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(BigDecimal saldo) {
-        this.saldo = saldo;
-    }
-
-    public int getSenha() {
-        return senha;
-    }
-
-    public void setSenha(int senha) {
-        this.senha = senha;
-    }
-
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
 
 }
