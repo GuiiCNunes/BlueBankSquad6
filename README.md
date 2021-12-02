@@ -16,6 +16,12 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 - Swagger
 - Deploy na AWS
 
+
+
+## Diagrama de Entidade Relacionamento (DER):
+<img src="./db/der.png" width="100%" />
+
+
 ## Utilizando a aplicação:
 
 - Requisitos:
@@ -33,10 +39,16 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 ```
 ???
 ```
-- URL para acesso local:
+## URL para acesso local:
   - http://localhost:5000
 
+## Acessar a documentação (Swagger):
+- <BASE_URL>/swagger-ui.html#
+ 
+
 ## Endpoints:
+
+- Clientes <br>
 
 | Método |  Caminho                     | Uso                       |
 | :---   | :---                         | :---                      |
@@ -45,7 +57,14 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | GET    | <BASE_URL>/listar            | Listar todos os clientes  |
 | GET    | <BASE_URL>/listar{id}        | Listar clientes pelo ID   |
 | GET    | <BASE_URL>/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
-| GET    | <BASE_URL>/delete/{id}       | Deletar clientes pelo ID  |
+| GET    | <BASE_URL>/deletar/{id}       | Deletar clientes pelo ID |
+
+- Transação <br>
+
+| Método |  Caminho                     | Uso                       |
+| :---   | :---                         | :---                      |
+| POST   | <BASE_URL>/transacao/salvar  | Realizar transação. Usar tipo: depósito/saque |
+| GET    | <BASE_URL>/transacao/listar   | Listar histórico de transações |
 
 - Amazon Simple Notification Service (SNS): <br>
 
@@ -53,13 +72,5 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | :---                            | :---                                 |
 | <BASE_URL>/addInscricao/{email} | Mandar email para inscrição no SNS    |
 | <BASE_URL>/enviarNotificacao    | Mandar notificação para emails cadastrados |
-
-
-## Acessar a documentação (Swagger):
-- <BASE_URL>/swagger-ui.html#
-
-## Diagrama de Entidade Relacionamento (DER):
-<img src="./db/der.png" width="100%" />
-
 
 

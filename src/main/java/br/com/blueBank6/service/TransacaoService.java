@@ -34,9 +34,5 @@ public class TransacaoService {
 		return repository.findAll();
 	}
 	
-	
-	
-	
-	
 
 }
