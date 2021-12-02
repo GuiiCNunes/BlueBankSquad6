@@ -40,7 +40,6 @@ public class ContaService {
 
     public void setSaldo(String tipo, BigDecimal valor, Long id) throws IOException {
         Conta conta = this.get(id);
-        checarSaldo(conta.getSaldo(), valor);
         BigDecimal novoSaldo;
         switch (tipo) {
             case "deposito":
@@ -48,6 +47,7 @@ public class ContaService {
                 break;
             case "transferir":
             case  "saque":
+                checarSaldo(conta.getSaldo(), valor);
                 novoSaldo = conta.getSaldo().subtract(valor);
                 break;
             default:
