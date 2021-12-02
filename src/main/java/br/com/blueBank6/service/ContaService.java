@@ -51,8 +51,7 @@ public class ContaService {
                 novoSaldo = conta.getSaldo().subtract(valor);
                 break;
             default:
-                novoSaldo = conta.getSaldo();
-                break;
+                throw new IOException("Método incorreto (Aceitos: deposito ou saque)");
         }
         conta.setSaldo(novoSaldo);
         repository.save(conta);
