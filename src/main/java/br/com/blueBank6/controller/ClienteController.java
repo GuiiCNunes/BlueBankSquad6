@@ -1,5 +1,6 @@
 package br.com.blueBank6.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,13 +28,14 @@ public class ClienteController {
 
 	@PostMapping("/salvar")
 	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDTO dto) {
-		try {
-			service.save(dto.coverter());
-			return new ResponseEntity<>("Cadastro efetuado com sucesso", HttpStatus.CREATED);
-		} catch (Exception e) {
-			String msg = e.getMessage();
-			return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
-		}
+        try {
+           if (!service.findByCpf(dto.getCpf()).isEmpty()) throw new IOException("CPF já cadastrado");
+            service.save(dto.coverter());
+            return new ResponseEntity<>("Cadastro efetuado com sucesso", HttpStatus.CREATED);
+        } catch (Exception e) {
+            String msg = e.getMessage();
+            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
+        }
 	}
 
 	@PutMapping(value = "/atualizar/{id}")
