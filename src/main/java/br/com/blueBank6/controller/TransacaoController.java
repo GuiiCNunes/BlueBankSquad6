@@ -23,16 +23,16 @@ public class TransacaoController {
 
 	@PostMapping("/salvar")
 	public ResponseEntity<Object> SalvarTransacao(@RequestBody Transacao transacao) {
-        try {
-            transacao.setData(LocalDateTime.now());
-            transacaoservice.save(transacao);
-            return new ResponseEntity<>("Transação efetuada com sucesso", HttpStatus.CREATED);
-        } catch (Exception e) {
-            String msg = e.getMessage();
-            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
-        }
+		try {
+			transacao.setData(LocalDateTime.now());
+			transacaoservice.save(transacao);
+			return new ResponseEntity<>("Transação efetuada com sucesso", HttpStatus.CREATED);
+		} catch (Exception e) {
+			String msg = e.getMessage();
+			return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
+		}
 	}
-  
+
 	@GetMapping("/listar")
 	public ResponseEntity<Object> ListarTransacao() {
 		return new ResponseEntity<>(transacaoservice.getTransacao(), HttpStatus.OK);

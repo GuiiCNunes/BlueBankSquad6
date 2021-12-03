@@ -21,30 +21,30 @@ public class Conta {
     @Column(name= "conta_id")
     private Long id;
 
-   
+
     @Column(name= "numero_conta", length = 15)
     private int numeroConta  ;
-   
 
-  
+
+
     @Column(name ="agencia", length = 5, nullable = false)
     private String agencia = "0001"  ;
-    
+
 
 
     @Column(name= "status")
     private Boolean status = true;
 
-   
+
     @NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#.###00,00")
     private BigDecimal saldo = new BigDecimal(0);
-    
-    
+
+
 
     @NotNull
     @Column(length = 8, nullable = false)
     private int senha;
-    
+
     public Long getId() {
         return id;
     }
@@ -58,8 +58,9 @@ public class Conta {
     }
 
     public void setNumeroConta(int numeroConta) {
-    	
-        this.numeroConta = numeroConta ;
+
+        this.numeroConta = numeroConta;
+
     }
 
     public String  getAgencia() {
@@ -68,7 +69,7 @@ public class Conta {
 
     public void setAgencia(String  agencia) {
         this.agencia = agencia;
-       
+
     }
 
     public Boolean getStatus() {
@@ -94,6 +95,6 @@ public class Conta {
     public void setSenha(int senha) {
         this.senha = senha;
     }
-    
-   
+
+
 }
