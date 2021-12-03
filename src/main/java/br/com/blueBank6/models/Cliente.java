@@ -1,20 +1,24 @@
 package br.com.blueBank6.models;
 
 import java.math.BigDecimal;
-
 import java.time.LocalDate;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.UniqueElements;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
-
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 
@@ -29,12 +33,12 @@ public class Cliente {
 	
 
 	
-	public Cliente( String nomeCompleto, String apelido,  String cpf,
+	public Cliente( Long id, String nomeCompleto, String apelido,  String cpf,
 		 LocalDate dataNascimento,  String nomeMae, BigDecimal renda,  String estadoCivil,
 		 String escolaridade,  String genero,  String email,  String telefone,
 		 Endereco endereco,  Conta conta,  Rg rg) {
 	
-	
+	this.id = id;
 	this.nomeCompleto = nomeCompleto;
 	this.apelido = apelido;
 	this.cpf = cpf;
@@ -52,10 +56,6 @@ public class Cliente {
 }
 
 
-
-
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cliente_id")
@@ -64,7 +64,6 @@ public class Cliente {
 	@NotNull
 	@Column(name = "nome_completo", nullable = false, length = 50)
 	private String nomeCompleto;
-
 	
 	@Column(name = "apelido", nullable = true, length = 20)
 	private String apelido;
@@ -80,9 +79,7 @@ public class Cliente {
 	
 	@NotNull
 	@Column(name = "nome_mae", nullable = false, length = 50)
-	private String nomeMae;
-
- 
+	private String nomeMae; 
 	
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,##00.00")
 	@Column(name = "renda",  columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
@@ -95,8 +92,6 @@ public class Cliente {
 	@NotNull
 	@Column(name = "escolaridade", nullable = false, length = 50)
 	private String escolaridade;
-
-
 
 	@NotNull
 	@Column(name = "genero", nullable = false, length = 50)

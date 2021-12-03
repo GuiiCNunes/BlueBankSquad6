@@ -45,11 +45,6 @@ public class Conta {
     @Column(length = 8, nullable = false)
     private int senha;
 
-
-
-
-
-
     public Long getId() {
         return id;
     }
@@ -63,7 +58,9 @@ public class Conta {
     }
 
     public void setNumeroConta(int numeroConta) {
+
         this.numeroConta = numeroConta;
+
     }
 
     public String  getAgencia() {
