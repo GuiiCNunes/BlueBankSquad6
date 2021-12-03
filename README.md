@@ -33,14 +33,14 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
   ```
   ./mvnw clean install -DskipTests
   ```
-- Rodar a aplicação:
-```
-???
-```
+  - Rodar a aplicaçã (dentro da pasta target, onde está o arquivo .jar)
+  ```
+  java -jar api-spring-blueBank-0.0.1-SNAPSHOT.jar  
+  ```
 
 ## URL para acesso local:
   - http://localhost:5000
-  
+
 
 ## Acessar a documentação (Swagger):
 - http://localhost:5000/swagger-ui.html#
