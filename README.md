@@ -33,7 +33,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
   ```
   ./mvnw clean install -DskipTests
   ```
-  - Rodar a aplicaçã (dentro da pasta target, onde está o arquivo .jar)
+  - Rodar a aplicação (dentro da pasta target, onde está o arquivo .jar):
   ```
   java -jar api-spring-blueBank-0.0.1-SNAPSHOT.jar  
   ```
