@@ -16,8 +16,6 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 - Swagger
 - Deploy na AWS
 
-
-
 ## Diagrama de Entidade Relacionamento (DER):
 <img src="./db/der.png" width="100%" />
 
@@ -39,11 +37,13 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 ```
 ???
 ```
+
 ## URL para acesso local:
   - http://localhost:5000
+  
 
 ## Acessar a documentação (Swagger):
-- <BASE_URL>/swagger-ui.html#
+- http://localhost:5000/swagger-ui.html#
  
 
 ## Endpoints:
@@ -55,9 +55,9 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | POST   | <BASE_URL>/salvar            | Cadastrar cliente         |
 | POST   | <BASE_URL>/atualizar/{id}    | Atualizar dados cadastrados dos clientes por ID|
 | GET    | <BASE_URL>/listar            | Listar todos os clientes  |
-| GET    | <BASE_URL>/listar{id}        | Listar clientes pelo ID   |
+| GET    | <BASE_URL>/listar/{id}       | Listar clientes pelo ID   |
 | GET    | <BASE_URL>/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
-| GET    | <BASE_URL>/deletar/{id}       | Deletar clientes pelo ID |
+| GET    | <BASE_URL>/deletar/{id}      | Deletar clientes pelo ID |
 
 - Transação <br>
 
