@@ -25,7 +25,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 - Requisitos:
   - Maven e JDK 11
 - Passo a passo:
-  - No terminal, dentro da aplicação, gere o .jar da aplicação executando o comando:
+  - No terminal, dentro da pasta da aplicação, gere o .jar executando o comando:
   ```
   mvn clean install -Dskiptests
   ```
