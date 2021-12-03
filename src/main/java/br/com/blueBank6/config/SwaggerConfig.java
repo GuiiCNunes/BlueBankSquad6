@@ -28,6 +28,7 @@ public class SwaggerConfig {
 		return docket;
 	}
 
+
 	private ApiInfoBuilder informacoesApi() {
 		ApiInfoBuilder informacoesApi = new ApiInfoBuilder();
 
@@ -39,3 +40,4 @@ public class SwaggerConfig {
 	}
 
 }
+
