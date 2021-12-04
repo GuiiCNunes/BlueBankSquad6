@@ -23,7 +23,8 @@ public class ClienteService {
 
   @Transactional
 	public void save(Cliente cliente) {
-		cliente.getConta().setNumeroConta(contaService.getUltimaConta());
+		if (cliente.getId() == null || cliente.getId() == 0 ) cliente.getConta().setNumeroConta(contaService.getUltimaConta());
+		else cliente.setConta(contaService.findyById(cliente.getConta().getId()).get());
 		repository.save(cliente);
 	}
 

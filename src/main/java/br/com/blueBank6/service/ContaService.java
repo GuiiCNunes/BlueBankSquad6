@@ -2,7 +2,9 @@ package br.com.blueBank6.service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Optional;
 
+import br.com.blueBank6.models.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,5 +62,10 @@ public class ContaService {
     public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) throws IOException {
         setSaldo("transferir", valor, idOrigem);
         setSaldo("deposito", valor, idDestino);
+    }
+
+    public Optional<Conta> findyById(Long id) {
+
+        return  repository.findById(id);
     }
 }
