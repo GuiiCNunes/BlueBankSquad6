@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+import com.amazonaws.services.sns.AmazonSNSClient;
+import com.amazonaws.services.sns.model.SubscribeRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,14 +27,21 @@ public class ClienteController {
 
 	@Autowired
 	private ClienteService service;
-	
+
+	@Autowired
+	private AmazonSNSClient snsClient;
+
+	String TOPIC_ARN = "arn:aws:sns:us-east-1:965934840569:SQ6T2";
+
 
 	@PostMapping("/salvar")
 	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDTO dto) {
         try {
-           if (!service.findyByCpf(dto.getCpf()).isEmpty()) throw new IOException("CPF já cadastrado");
-            service.save(dto.coverter());
-            return new ResponseEntity<>("Cliente cadastrado com sucesso", HttpStatus.CREATED);
+           if (!service.findByCpf(dto.getCpf()).isEmpty()) throw new IOException("CPF já cadastrado");
+			    SubscribeRequest request = new SubscribeRequest(TOPIC_ARN, "email", dto.getEmail());
+			    snsClient.subscribe(request);
+		   	  service.save(dto.coverter());
+          return new ResponseEntity<>("Cadastro efetuado com sucesso", HttpStatus.CREATED);
         } catch (Exception e) {
             String msg = e.getMessage();
             return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
