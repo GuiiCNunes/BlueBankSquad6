@@ -7,6 +7,11 @@ import org.springframework.stereotype.Service;
 import br.com.blueBank6.models.Conta;
 import br.com.blueBank6.repository.ContaRepository;
 
+
+
+@Service
+public class ContaService{
+
     @Autowired
     private ContaRepository repository;
 

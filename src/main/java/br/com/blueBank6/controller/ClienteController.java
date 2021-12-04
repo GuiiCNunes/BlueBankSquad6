@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import br.com.blueBank6.dto.ClienteDto;
+import br.com.blueBank6.dto.ClienteDTO;
 import br.com.blueBank6.models.Cliente;
 import br.com.blueBank6.service.ClienteService;
 
@@ -26,9 +26,9 @@ public class ClienteController {
 	
 
 	@PostMapping("/salvar")
-	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDto dto) {
+	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDTO dto) {
         try {
-           if (!service.findByCpf(dto.getCpf()).isEmpty()) throw new IOException("CPF já cadastrado");
+           if (!service.findyByCpf(dto.getCpf()).isEmpty()) throw new IOException("CPF já cadastrado");
             service.save(dto.coverter());
             return new ResponseEntity<>("Cliente cadastrado com sucesso", HttpStatus.CREATED);
         } catch (Exception e) {
@@ -78,11 +78,13 @@ public class ClienteController {
 
 	
 	@GetMapping(value = "/listar/cpf/{cpf}")
-	public ResponseEntity<Object> ListarTransacao(@PathVariable String cpf) {
-		if(service.findByCpf(cpf).isEmpty()|| service.findByCpf(cpf) == null) {
+	public ResponseEntity<Object> listarPorCpf(@PathVariable String cpf) {
+		
+		
+		if(service.findyByCpf(cpf).isEmpty()|| service.findyByCpf(cpf) == null) {
 			return new ResponseEntity<>("CPF não cadastrado", HttpStatus.BAD_REQUEST);
 		}else {
-			return new ResponseEntity<>(service.findByCpf(cpf), HttpStatus.OK);
+			return new ResponseEntity<>(service.findyByCpf(cpf), HttpStatus.OK);
 		}
 	
 	}
