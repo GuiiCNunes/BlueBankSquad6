@@ -27,10 +27,6 @@ public class ClienteService {
 		return repository.findAll();
 	}
 
-	public void findyByCpf(String cpf) {
-		repository.findByCpf(cpf);
-	}
-
 	public Optional<Cliente> findyById(Long id) {
 		return repository.findById(id);
 	}

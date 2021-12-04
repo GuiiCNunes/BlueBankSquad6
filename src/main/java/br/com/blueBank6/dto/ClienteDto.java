@@ -9,6 +9,7 @@ import br.com.blueBank6.models.Endereco;
 import br.com.blueBank6.models.Rg;
 
 public class ClienteDto {
+	private Long id;
 	private String nomeCompleto;
 	private String apelido;
 	private String cpf;
@@ -24,122 +25,131 @@ public class ClienteDto {
 	private Endereco endereco;
 	private Conta conta;
 	private Rg rg;
-	
+
 	public Cliente coverter() {
-		return new Cliente(nomeCompleto, apelido, cpf, dataNascimento, nomeMae, renda, estadoCivil, escolaridade,
+		return new Cliente(id, nomeCompleto, apelido, cpf, dataNascimento, nomeMae, renda, estadoCivil, escolaridade,
 				genero, email, telefone, endereco, conta, rg);
-		}
 
-		public String getNomeCompleto() {
-			return nomeCompleto;
-		}
+	}
 
-		public void setNomeCompleto(String nomeCompleto) {
-			this.nomeCompleto = nomeCompleto;
-		}
+	public Long getId() {
+		return id;
+	}
 
-		public String getApelido() {
-			return apelido;
-		}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-		public void setApelido(String apelido) {
-			this.apelido = apelido;
-		}
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
 
-		public String getCpf() {
-			return cpf;
-		}
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
 
-		public void setCpf(String cpf) {
-			this.cpf = cpf;
-		}
+	public String getApelido() {
+		return apelido;
+	}
 
-		public LocalDate getDataNascimento() {
-			return dataNascimento;
-		}
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
+	}
 
-		public void setDataNascimento(LocalDate dataNascimento) {
-			this.dataNascimento = dataNascimento;
-		}
+	public String getCpf() {
+		return cpf;
+	}
 
-		public String getNomeMae() {
-			return nomeMae;
-		}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
-		public void setNomeMae(String nomeMae) {
-			this.nomeMae = nomeMae;
-		}
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
 
-		public BigDecimal getRenda() {
-			return renda;
-		}
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 
-		public void setRenda(BigDecimal renda) {
-			this.renda = renda;
-		}
+	public String getNomeMae() {
+		return nomeMae;
+	}
 
-		public String getEstadoCivil() {
-			return estadoCivil;
-		}
+	public void setNomeMae(String nomeMae) {
+		this.nomeMae = nomeMae;
+	}
 
-		public void setEstadoCivil(String estadoCivil) {
-			this.estadoCivil = estadoCivil;
-		}
+	public BigDecimal getRenda() {
+		return renda;
+	}
 
-		public String getEscolaridade() {
-			return escolaridade;
-		}
+	public void setRenda(BigDecimal renda) {
+		this.renda = renda;
+	}
 
-		public void setEscolaridade(String escolaridade) {
-			this.escolaridade = escolaridade;
-		}
+	public String getEstadoCivil() {
+		return estadoCivil;
+	}
 
-		public String getGenero() {
-			return genero;
-		}
+	public void setEstadoCivil(String estadoCivil) {
+		this.estadoCivil = estadoCivil;
+	}
 
-		public void setGenero(String genero) {
-			this.genero = genero;
-		}
+	public String getEscolaridade() {
+		return escolaridade;
+	}
 
-		public String getEmail() {
-			return email;
-		}
+	public void setEscolaridade(String escolaridade) {
+		this.escolaridade = escolaridade;
+	}
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
+	public String getGenero() {
+		return genero;
+	}
 
-		public String getTelefone() {
-			return telefone;
-		}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
 
-		public void setTelefone(String telefone) {
-			this.telefone = telefone;
-		}
+	public String getEmail() {
+		return email;
+	}
 
-		public Endereco getEndereco() {
-			return endereco;
-		}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-		public void setEndereco(Endereco endereco) {
-			this.endereco = endereco;
-		}
+	public String getTelefone() {
+		return telefone;
+	}
 
-		public Conta getConta() {
-			return conta;
-		}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
-		public void setConta(Conta conta) {
-			this.conta = conta;
-		}
+	public Endereco getEndereco() {
+		return endereco;
+	}
 
-		public Rg getRg() {
-			return rg;
-		}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
-		public void setRg(Rg rg) {
-			this.rg = rg;
-		}
+	public Conta getConta() {
+		return conta;
+	}
+
+	public void setConta(Conta conta) {
+		this.conta = conta;
+	}
+
+	public Rg getRg() {
+		return rg;
+	}
+
+	public void setRg(Rg rg) {
+		this.rg = rg;
+	}
 
 }

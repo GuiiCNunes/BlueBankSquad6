@@ -1,9 +1,7 @@
 package br.com.blueBank6.models;
 
 import java.math.BigDecimal;
-
 import java.time.LocalDate;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,10 +27,11 @@ public class Cliente {
 
 	}
 
-	public Cliente(String nomeCompleto, String apelido, String cpf, LocalDate dataNascimento, String nomeMae,
+	public Cliente(Long id, String nomeCompleto, String apelido, String cpf, LocalDate dataNascimento, String nomeMae,
 			BigDecimal renda, String estadoCivil, String escolaridade, String genero, String email, String telefone,
 			Endereco endereco, Conta conta, Rg rg) {
-
+		
+		this.id = id;
 		this.nomeCompleto = nomeCompleto;
 		this.apelido = apelido;
 		this.cpf = cpf;
