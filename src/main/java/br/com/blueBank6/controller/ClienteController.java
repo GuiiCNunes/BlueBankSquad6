@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import br.com.blueBank6.dto.ClienteDTO;
+import br.com.blueBank6.dto.ClienteDto;
 import br.com.blueBank6.models.Cliente;
 import br.com.blueBank6.service.ClienteService;
 
@@ -27,11 +26,11 @@ public class ClienteController {
 	
 
 	@PostMapping("/salvar")
-	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDTO dto) {
+	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDto dto) {
         try {
            if (!service.findByCpf(dto.getCpf()).isEmpty()) throw new IOException("CPF já cadastrado");
             service.save(dto.coverter());
-            return new ResponseEntity<>("Cadastro efetuado com sucesso", HttpStatus.CREATED);
+            return new ResponseEntity<>("Cliente cadastrado com sucesso", HttpStatus.CREATED);
         } catch (Exception e) {
             String msg = e.getMessage();
             return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
@@ -39,19 +38,21 @@ public class ClienteController {
 	}
 
 	@PutMapping(value = "/atualizar/{id}")
+
 	public ResponseEntity<String> atualizar(@PathVariable long id, @RequestBody ClienteDTO dto) {
-		
-				
+	
 		try {
 			dto.setId(id);
 			service.save(dto.coverter());
-			return new ResponseEntity<>("Cadastro Atualizado com sucesso", HttpStatus.CREATED);
-		} catch (Exception e) {
+
+			return new ResponseEntity<>("Cliente atualizado com sucesso", HttpStatus.CREATED);
+		}catch(Exception e){
 			String msg = e.getMessage();
 			return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
 		}
 
 	}
+
 
 	@GetMapping(value = "/listar")
 	public ResponseEntity<List<Cliente>> listar() {
@@ -73,12 +74,7 @@ public class ClienteController {
 	@GetMapping( value = "/listar/{id}")
 	public Optional<Cliente> listarId(@PathVariable long id) {
 		return service.findyById(id);
-
-
 	}
-	
-	
-	
 
 	
 	@GetMapping(value = "/listar/cpf/{cpf}")
@@ -88,9 +84,7 @@ public class ClienteController {
 		}else {
 			return new ResponseEntity<>(service.findByCpf(cpf), HttpStatus.OK);
 		}
-		
-		
-
+	
 	}
 	
 }
