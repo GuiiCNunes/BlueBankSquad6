@@ -3,16 +3,14 @@ package br.com.blueBank6.service;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Optional;
-
 import br.com.blueBank6.models.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.com.blueBank6.models.Conta;
 import br.com.blueBank6.repository.ContaRepository;
 
 @Service
-public class ContaService {
+public class ContaService{
 
     @Autowired
     private ContaRepository repository;
@@ -65,7 +63,6 @@ public class ContaService {
     }
 
     public Optional<Conta> findyById(Long id) {
-
         return  repository.findById(id);
     }
 }

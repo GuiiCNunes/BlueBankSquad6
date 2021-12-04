@@ -10,7 +10,7 @@ import br.com.blueBank6.models.Conta;
 import br.com.blueBank6.models.Endereco;
 import br.com.blueBank6.models.Rg;
 
-public class ClienteDTO {
+public class ClienteDto {
 	
 	private long id;
 	

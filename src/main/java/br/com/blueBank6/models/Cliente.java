@@ -15,74 +15,68 @@ import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.UniqueElements;
+
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "clientes")
 public class Cliente {
-	
-	
+
 	public Cliente() {
-		
 	}
-	
 
-	
-	public Cliente( Long id, String nomeCompleto, String apelido,  String cpf,
-		 LocalDate dataNascimento,  String nomeMae, BigDecimal renda,  String estadoCivil,
-		 String escolaridade,  String genero,  String email,  String telefone,
-		 Endereco endereco,  Conta conta,  Rg rg) {
-	
-	this.id = id;
-	this.nomeCompleto = nomeCompleto;
-	this.apelido = apelido;
-	this.cpf = cpf;
-	this.dataNascimento = dataNascimento;
-	this.nomeMae = nomeMae;
-	this.renda = renda;
-	this.estadoCivil = estadoCivil;
-	this.escolaridade = escolaridade;
-	this.genero = genero;
-	this.email = email;
-	this.telefone = telefone;
-	this.endereco = endereco;
-	this.conta = conta;
-	this.rg = rg;
-}
+	public Cliente(Long id,String nomeCompleto, String apelido, String cpf, LocalDate dataNascimento, String nomeMae,
+			BigDecimal renda, String estadoCivil, String escolaridade, String genero, String email, String telefone,
+			Endereco endereco, Conta conta, Rg rg) {
 
+		this.id = id;
+		this.nomeCompleto = nomeCompleto;
+		this.apelido = apelido;
+		this.cpf = cpf;
+		this.dataNascimento = dataNascimento;
+		this.nomeMae = nomeMae;
+		this.renda = renda;
+		this.estadoCivil = estadoCivil;
+		this.escolaridade = escolaridade;
+		this.genero = genero;
+		this.email = email;
+		this.telefone = telefone;
+		this.endereco = endereco;
+		this.conta = conta;
+		this.rg = rg;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cliente_id")
-	private Long id;	
-	
+	private Long id;
+
 	@NotNull
 	@Column(name = "nome_completo", nullable = false, length = 50)
 	private String nomeCompleto;
-	
+
 	@Column(name = "apelido", nullable = true, length = 20)
 	private String apelido;
 
 	@CPF
 	@Column(name = "cpf", nullable = false, length = 14, unique = true)
 	private String cpf;
-	
+
 	@NotNull
 	@JsonFormat(pattern = "dd/MM/yyyy")
-	@Column(name = "data_nascimento",nullable = false, columnDefinition = "DATE")
+	@Column(name = "data_nascimento", nullable = false, columnDefinition = "DATE")
 	private LocalDate dataNascimento;
-	
+
 	@NotNull
 	@Column(name = "nome_mae", nullable = false, length = 50)
-	private String nomeMae; 
-	
+	private String nomeMae;
+
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,##00.00")
-	@Column(name = "renda",  columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
+	@Column(name = "renda", columnDefinition = "DECIMAL(12,2) DEFAULT 0.00")
 	private BigDecimal renda;
 
 	@NotNull
@@ -104,22 +98,21 @@ public class Cliente {
 	@NotNull
 	@Column(name = "telefone", nullable = false, length = 20)
 	private String telefone;
-    
-    
-	  @Valid
-	  @OneToOne (cascade = CascadeType.ALL)
-	  @JoinColumn(name = "endereco_id", nullable = false)
-	  private Endereco endereco;
 
-	  @Valid
-	  @OneToOne(cascade = CascadeType.ALL)
-	  @JoinColumn(name = "conta_id", nullable = false)
-	  private Conta conta;
-	  
-	  @Valid
-	  @OneToOne(cascade = CascadeType.ALL)
-	  @JoinColumn(name = "rg_id", nullable = false)
-	  private Rg rg;
+	@Valid
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "endereco_id", nullable = false)
+	private Endereco endereco;
+
+	@Valid
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "conta_id", nullable = false)
+	private Conta conta;
+
+	@Valid
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "rg_id", nullable = false)
+	private Rg rg;
 
 	public Long getId() {
 		return id;
@@ -240,12 +233,5 @@ public class Cliente {
 	public void setRg(Rg rg) {
 		this.rg = rg;
 	}
-		
-	  
-	  
-		
 
 }
-
-
-
