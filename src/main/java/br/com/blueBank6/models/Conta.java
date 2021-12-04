@@ -1,7 +1,6 @@
 package br.com.blueBank6.models;
 
 import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.stereotype.Controller;
 

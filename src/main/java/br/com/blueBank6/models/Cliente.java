@@ -24,13 +24,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Cliente {
 
 	public Cliente() {
-
 	}
 
 	public Cliente(Long id, String nomeCompleto, String apelido, String cpf, LocalDate dataNascimento, String nomeMae,
 			BigDecimal renda, String estadoCivil, String escolaridade, String genero, String email, String telefone,
 			Endereco endereco, Conta conta, Rg rg) {
-		
+
 		this.id = id;
 		this.nomeCompleto = nomeCompleto;
 		this.apelido = apelido;
