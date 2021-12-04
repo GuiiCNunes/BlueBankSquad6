@@ -22,7 +22,8 @@ public class ClienteService {
 
   @Transactional
 	public void save(Cliente cliente) {
-		cliente.getConta().setNumeroConta(contaService.getUltimaConta());
+		if (cliente.getId() == null || cliente.getId() == 0 ) cliente.getConta().setNumeroConta(contaService.getUltimaConta());
+		else cliente.setConta(contaService.findyById(cliente.getConta().getId()).get());
 		repository.save(cliente);
 	}
 
@@ -34,11 +35,11 @@ public class ClienteService {
 		return repository.findAll();
 	}
 
-	public List<Cliente> findyByCpf(String cpf) {
+	public List<Cliente> findByCpf(String cpf) {
 		return repository.findByCpf(cpf);
 	}
 		
-	public Optional<Cliente> findyById(Long id) {
+	public Optional<Cliente> findById(Long id) {
 		return repository.findById(id);
 	}
 

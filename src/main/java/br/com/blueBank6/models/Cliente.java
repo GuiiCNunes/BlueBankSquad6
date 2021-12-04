@@ -33,6 +33,7 @@ public class Cliente {
 			BigDecimal renda, String estadoCivil, String escolaridade, String genero, String email, String telefone,
 			Endereco endereco, Conta conta, Rg rg) {
 
+		this.id = id;
 		this.nomeCompleto = nomeCompleto;
 		this.apelido = apelido;
 		this.cpf = cpf;
