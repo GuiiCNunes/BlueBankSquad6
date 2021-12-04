@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.blueBank6.dto.ClienteDTO;
 import br.com.blueBank6.models.Cliente;
 import br.com.blueBank6.service.ClienteService;
 
-@RestController(value = "/")
+@RestController
+@RequestMapping("/cliente")
 public class ClienteController {
 
 	@Autowired
