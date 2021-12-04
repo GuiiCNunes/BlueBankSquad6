@@ -3,6 +3,7 @@ package br.com.blueBank6.service;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Optional;
+import br.com.blueBank6.models.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.blueBank6.models.Conta;

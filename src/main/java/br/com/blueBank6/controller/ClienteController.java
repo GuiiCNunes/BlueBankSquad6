@@ -3,6 +3,8 @@ package br.com.blueBank6.controller;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import com.amazonaws.services.sns.AmazonSNSClient;
+import com.amazonaws.services.sns.model.SubscribeRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +14,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.amazonaws.services.sns.AmazonSNSClient;
 import com.amazonaws.services.sns.model.SubscribeRequest;
 import br.com.blueBank6.dto.ClienteDto;
 import br.com.blueBank6.models.Cliente;
 import br.com.blueBank6.service.ClienteService;
+
 
 @RestController(value = "/cliente")
 public class ClienteController {
@@ -29,7 +33,6 @@ public class ClienteController {
 	private AmazonSNSClient snsClient;
 
 	String TOPIC_ARN = "arn:aws:sns:us-east-1:965934840569:SQ6T2";
-
 	@PostMapping("/salvar")
 	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDto dto) {
 		try {
@@ -68,6 +71,7 @@ public class ClienteController {
 		try {
 			service.delete(id);
 			return new ResponseEntity<>("Cliente deletado com sucesso", HttpStatus.CREATED);
+
 		} catch (Exception e) {
 			String msg = e.getMessage();
 			return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);

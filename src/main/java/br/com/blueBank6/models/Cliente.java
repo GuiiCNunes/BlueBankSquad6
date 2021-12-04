@@ -17,6 +17,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
