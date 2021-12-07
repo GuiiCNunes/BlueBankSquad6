@@ -15,10 +15,11 @@ import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.UniqueElements;
+
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
@@ -28,10 +29,11 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	public Cliente(String nomeCompleto, String apelido, String cpf, LocalDate dataNascimento, String nomeMae,
+	public Cliente(Long id,String nomeCompleto, String apelido, String cpf, LocalDate dataNascimento, String nomeMae,
 			BigDecimal renda, String estadoCivil, String escolaridade, String genero, String email, String telefone,
 			Endereco endereco, Conta conta, Rg rg) {
 
+		this.id = id;
 		this.nomeCompleto = nomeCompleto;
 		this.apelido = apelido;
 		this.cpf = cpf;
