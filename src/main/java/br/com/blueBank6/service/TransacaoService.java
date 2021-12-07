@@ -2,6 +2,8 @@ package br.com.blueBank6.service;
 
 import java.util.List;
 
+import br.com.blueBank6.models.Conta;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +32,20 @@ public class TransacaoService {
 	  repository.save(transacao);
 	}
 
+	public List<String> extrato(Long contaId) {
+		return repository.findAllByContaId(contaId);
+	}
+
+
+	public List<String> extratocpf(String cpf) {
+		return repository.findAllByCpf(cpf);
+	}
+
 	public List<Transacao> getTransacao() {
 		return repository.findAll();
+	}
+
+	public List<Transacao> buscarTransacoes(Conta conta) {
+		return repository.findAllByConta(conta);
 	}
 }

@@ -3,7 +3,6 @@ package br.com.blueBank6.service;
 import java.util.List;
 import java.util.Optional;
 
-import br.com.blueBank6.repository.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,11 +36,13 @@ public class ClienteService {
 	public void findyByCpf(String cpf) {
 		repository.findByCpf(cpf);
 	}
-	
-	public Optional<Cliente> findyById(Long id) {
-		
-		return  repository.findById(id);
+
+
+	public Optional<Cliente> findById(Long id) {
+		return repository.findById(id);
 	}
+
+
 	public List<Cliente> findByCpf(String cpf) {
 		
 		return  repository.findByCpf(cpf);

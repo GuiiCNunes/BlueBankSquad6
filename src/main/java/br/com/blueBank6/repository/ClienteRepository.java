@@ -13,7 +13,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
 	
 	List<Cliente> findByCpf(String cpf);
-	
-	
+
+
+
 
 }

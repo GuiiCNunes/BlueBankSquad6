@@ -56,4 +56,13 @@ public class ContaService {
         setSaldo("transferir", valor, idOrigem);
         setSaldo("deposito", valor, idDestino);
     }
+
+    public BigDecimal mostrarSaldo(Long contaId) {
+        Conta conta = repository.getById(contaId);
+        return conta.getSaldo();
+
+    }
+
+
+
 }

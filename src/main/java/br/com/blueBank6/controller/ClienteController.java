@@ -59,7 +59,7 @@ public class ClienteController {
 	}
 	@RequestMapping(method = RequestMethod.GET, value = "/listar/{id}")
 	public Optional<Cliente> listarId(@PathVariable long id) {
-		return service.findyById(id);
+		return service.findById(id);
 		
 	}
 	@RequestMapping(method = RequestMethod.GET, value = "/listar/cpf/{cpf}")
