@@ -9,10 +9,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.NumberFormat;
+import org.springframework.stereotype.Controller;
 
+@Controller
 @Entity
 @Table(name = "contas")
 public class Conta {
+	
+	public Conta() {
+		
+	}
+	
+	public Conta(Long id, int numeroConta, String agencia, Boolean status, BigDecimal saldo) {
+		this.id = id;
+		this.numeroConta = numeroConta;
+		this.agencia = agencia;
+		this.status = status;
+		this.saldo = saldo;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,7 +63,7 @@ public class Conta {
 	}
 
 	public void setNumeroConta(int numeroConta) {
-		this.numeroConta = numeroConta + 1;
+		this.numeroConta = numeroConta;
 	}
 
 	public String getAgencia() {
