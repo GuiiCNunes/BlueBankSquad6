@@ -32,20 +32,8 @@ public class TransacaoService {
 	  repository.save(transacao);
 	}
 
-	public List<String> extrato(Long contaId) {
+
+	public List<Transacao> buscarTransacoes(Long contaId) {
 		return repository.findAllByContaId(contaId);
-	}
-
-
-	public List<String> extratocpf(String cpf) {
-		return repository.findAllByCpf(cpf);
-	}
-
-	public List<Transacao> getTransacao() {
-		return repository.findAll();
-	}
-
-	public List<Transacao> buscarTransacoes(Conta conta) {
-		return repository.findAllByConta(conta);
 	}
 }

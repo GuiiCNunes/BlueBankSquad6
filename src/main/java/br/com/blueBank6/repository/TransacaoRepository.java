@@ -14,15 +14,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TransacaoRepository extends JpaRepository<Transacao, Long> {
 
-    @Query(value = "SELECT TIPO, VALOR, DATA_EMISSAO, ID_CONTA_DESTINO FROM TRANSACOES WHERE ID_CONTA_ORIGEM = ?1" , nativeQuery = true)
-    List<String> findAllByContaId(Long contaId);
+    @Query(value = "SELECT * FROM TRANSACOES WHERE ID_CONTA_ORIGEM = ?1 OR ID_CONTA_DESTINO = ?1" , nativeQuery = true)
+    List<Transacao> findAllByContaId(Long contaId);
 
 
-
-    @Query(value = "SELECT TIPO, VALOR, DATA_EMISSAO FROM TRANSACOES WHERE ID_CONTA_ORIGEM = (SELECT CONTA_ID FROM CLIENTES WHERE CPF = ?1)", nativeQuery = true)
-    List<String> findAllByCpf(String cpf);
-
-	
-	List<Transacao> findAllByConta(Conta conta);
 	
 }

@@ -21,6 +21,9 @@ import br.com.blueBank6.service.TransacaoService;
 public class TransacaoController {
 
 	@Autowired
+	private TransacaoRespostaDTO transacaoRespostaDTO;
+
+	@Autowired
 	private ContaService contaservice;
 
 	@Autowired
@@ -38,39 +41,24 @@ public class TransacaoController {
 		}
 	}
 
-	@GetMapping("/listar")
-	public ResponseEntity<Object> ListarTransacao() {
-		return new ResponseEntity<>(transacaoservice.getTransacao(), HttpStatus.OK);
-	}
+
 	@GetMapping("/saldo/{contaId}")
 	public BigDecimal mostraSaldo(@PathVariable Long contaId) {
 		return contaservice.mostrarSaldo(contaId);
 	}
 
+
 	@GetMapping("/extrato/{contaId}")
-	public List<String> extrato(@PathVariable Long contaId) {
-		return transacaoservice.extrato(contaId);
-	}
-
-
-	@GetMapping("/extratocpf/{cpf}")
-	public List<String> extratocpf(@PathVariable String cpf) {
-		return transacaoservice.extratocpf(cpf);
-	}
-
-	@GetMapping("/extratojava/{contaId}")
 	public List<String> extratojava(@PathVariable Long contaId) {
 		Conta conta = contaservice.get(contaId);
-		List<Transacao> transacoes = transacaoservice.buscarTransacoes(conta);
+		List<Transacao> transacoes = transacaoservice.buscarTransacoes(contaId);
 		List<String> extrato = new ArrayList<>();
 		for (Transacao i : transacoes) {
 			if (i.getTipo().equals("transferir")) {
-				TransacaoRespostaDTO transacao = new TransacaoRespostaDTO();
-				extrato.add(transacao.converter(i));
+				extrato.add(transacaoRespostaDTO.converter(i));
 
 			} else {
-				TransacaoRespostaDTO transacao = new TransacaoRespostaDTO();
-				extrato.add(transacao.converterSimples(i));
+				extrato.add(transacaoRespostaDTO.converterSimples(i));
 			}
 		}
 		return extrato;

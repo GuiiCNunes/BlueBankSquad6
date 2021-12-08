@@ -4,11 +4,13 @@ import br.com.blueBank6.models.Cliente;
 import br.com.blueBank6.models.Transacao;
 import br.com.blueBank6.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-
+@Component
 public class TransacaoRespostaDTO {
 
     @Autowired
@@ -20,38 +22,25 @@ public class TransacaoRespostaDTO {
     private String clienteOrigem;
     private String clienteDestino;
 
-    public TransacaoRespostaDTO(){
-
-    };
-
-    public TransacaoRespostaDTO(String tipo, LocalDateTime data, String clienteOrigem, String clienteDestino) {
-    }
-
-    public TransacaoRespostaDTO(String tipo, LocalDateTime data) {
-    }
 
     public String converterSimples(Transacao transacao) {
-        this.setTipo(transacao.getTipo());
-        this.setData(transacao.getData().toString());
-        this.setValor(transacao.getValor().toString());
-        String txt = this.tipo.toUpperCase() + "  |  DATA: " + this.data + "  | VALOR: R$" + this.valor;
+        String tipo = transacao.getTipo();
+        String data = transacao.getData().toString();
+        String valor = transacao.getValor().toString();
+        String txt = tipo.toUpperCase() + "  |  DATA: " + data + "  | VALOR: R$" + valor;
         return txt;
     }
     
     public String converter(Transacao transacao) {
         Long contaId = transacao.getConta().getId();
         Long destinoId = transacao.getDestino().getId();
-        Cliente clienteOrigem = clienteService.findById(contaId).get();
-        Cliente clienteDestino = clienteService.findById(destinoId).get();
-        System.out.println("teste" + destinoId);
-        this.setTipo(transacao.getTipo());
-        this.setData(transacao.getData().toString());
-        this.setValor(transacao.getValor().toString());
-        this.setClienteOrigem(clienteOrigem.getNomeCompleto());
-        this.setClienteDestino(clienteDestino.getNomeCompleto());
-        String txt = this.tipo.toUpperCase() + "  |  DATA: " + this.data + "  | VALOR: R$" + this.valor
-                + "  |  ORIGEM: " + this.clienteOrigem + "  |  DESTINO: " + this.clienteDestino;
-
+        String clienteOrigem = clienteService.findById(contaId).get().getNomeCompleto();
+        String clienteDestino = clienteService.findById(destinoId).get().getNomeCompleto();
+        String tipo = transacao.getTipo();
+        String data = transacao.getData().toString();
+        String valor = transacao.getValor().toString();
+        String txt = tipo.toUpperCase() + "  |  DATA: " + data + "  | VALOR: R$" + valor
+                + "  |  ORIGEM: " + clienteOrigem + "  |  DESTINO: " + clienteDestino;
         return txt;
     }
 
