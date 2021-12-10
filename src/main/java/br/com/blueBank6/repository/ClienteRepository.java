@@ -11,10 +11,5 @@ import br.com.blueBank6.models.Cliente;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
-	
 	List<Cliente> findByCpf(String cpf);
-
-
-
-
 }

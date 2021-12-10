@@ -1,10 +1,11 @@
 package br.com.blueBank6.service;
 
+import java.io.IOException;
 import java.math.BigDecimal;
-
+import java.util.Optional;
+import br.com.blueBank6.models.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.com.blueBank6.models.Conta;
 import br.com.blueBank6.repository.ContaRepository;
 
@@ -32,37 +33,42 @@ public class ContaService {
     public Conta get(Long id) {
         return repository.findById(id).get();
     }
-
-    public void setSaldo(String tipo, BigDecimal valor, Long id) {
-        Conta conta = this.get(id);
-        BigDecimal novoSaldo;
-        switch (tipo) {
-            case "deposito":
-                novoSaldo = conta.getSaldo().add(valor);
-                break;
-            case "transferir":
-            case  "saque":
-                novoSaldo = conta.getSaldo().subtract(valor);
-                break;
-            default:
-                novoSaldo = conta.getSaldo();
-                break;
-        }
-        conta.setSaldo(novoSaldo);
-        repository.save(conta);
+  
+    public void checarSaldo(BigDecimal atual, BigDecimal saida) throws IOException {
+      if (atual.compareTo(saida) == -1)
+        throw new IOException("Saldo insuficiente");
     }
 
-    public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) {
-        setSaldo("transferir", valor, idOrigem);
-        setSaldo("deposito", valor, idDestino);
+    public void setSaldo(String tipo, BigDecimal valor, Long id) throws IOException {
+      Conta conta = this.get(id);
+      BigDecimal novoSaldo;
+      switch (tipo) {
+      case "deposito":
+        novoSaldo = conta.getSaldo().add(valor);
+        break;
+      case "transferencia":
+      case "saque":
+        checarSaldo(conta.getSaldo(), valor);
+        novoSaldo = conta.getSaldo().subtract(valor);
+        break;
+      default:
+        throw new IOException("Método incorreto (Aceitos: deposito, saque ou transferencia)");
+      }
+      conta.setSaldo(novoSaldo);
+      repository.save(conta);
+    }
+
+    public void gerenciarContas(String tipo, BigDecimal valor, Long idOrigem, Long idDestino) throws IOException {
+      setSaldo("transferir", valor, idOrigem);
+      setSaldo("deposito", valor, idDestino);
     }
 
     public BigDecimal mostrarSaldo(Long contaId) {
         Conta conta = repository.getById(contaId);
         return conta.getSaldo();
-
     }
 
-
-
+    public Optional<Conta> findyById(Long id) {
+      return repository.findById(id);
+    }
 }

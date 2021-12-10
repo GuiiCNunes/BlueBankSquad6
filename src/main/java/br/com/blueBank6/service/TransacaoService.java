@@ -1,5 +1,6 @@
 package br.com.blueBank6.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import br.com.blueBank6.models.Conta;
@@ -21,13 +22,12 @@ public class TransacaoService {
 	private ContaService contaService;
 
 	@Transactional
-	public void save(Transacao transacao) {
+	public void save(Transacao transacao) throws IOException {
 	  if (transacao.getDestino() == null) {
 		  contaService.setSaldo(transacao.getTipo(), transacao.getValor(), transacao.getConta().getId());
 	  } else {
 		  contaService.gerenciarContas(
-				  transacao.getTipo(), transacao.getValor(), transacao.getConta().getId(), transacao.getDestino().getId()
-		  );
+				  transacao.getTipo(), transacao.getValor(), transacao.getConta().getId(), transacao.getDestino().getId());
 	  }
 	  repository.save(transacao);
 	}
