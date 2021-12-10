@@ -32,7 +32,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
   Caso o código acima não funcione, execute:
   ```
   ./mvnw clean install -DskipTests
-  ```
+  ```git
   - Rodar a aplicação (dentro da pasta target, onde está o arquivo .jar):
   ```
   java -jar api-spring-blueBank-0.0.1-SNAPSHOT.jar  
@@ -48,16 +48,18 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 
 ## Endpoints:
 
+
+
 - Clientes <br>
 
 | Método |  Caminho                     | Uso                       |
 | :---   | :---                         | :---                      |
-| POST   | <BASE_URL>/salvar            | Cadastrar cliente         |
-| POST   | <BASE_URL>/atualizar/{id}    | Atualizar dados cadastrados dos clientes por ID|
-| GET    | <BASE_URL>/listar            | Listar todos os clientes  |
-| GET    | <BASE_URL>/listar/{id}       | Listar clientes pelo ID   |
-| GET    | <BASE_URL>/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
-| GET    | <BASE_URL>/deletar/{id}      | Deletar clientes pelo ID |
+| POST   | <BASE_URL>/cliente/salvar            | Cadastrar cliente         |
+| POST   | <BASE_URL>/cliente/atualizar/{id}    | Atualizar dados cadastrados dos clientes por ID|
+| GET    | <BASE_URL>/cliente/listar            | Listar todos os clientes  |
+| GET    | <BASE_URL>/cliente/listar/{id}       | Listar clientes pelo ID   |
+| GET    | <BASE_URL>/cliente/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
+| GET    | <BASE_URL>/cliente/deletar/{id}      | Deletar clientes pelo ID |
 
 - Transação <br>
 
