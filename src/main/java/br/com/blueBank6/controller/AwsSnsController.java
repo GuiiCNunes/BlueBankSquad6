@@ -14,7 +14,7 @@ public class AwsSnsController {
 	@Autowired
 	private AmazonSNSClient snsClient;
 
-	String TOPIC_ARN = "arn:aws:sns:us-east-1:965934840569:SQ6T2";
+	String TOPIC_ARN = "arn:aws:sns:us-east-2:965934840569:SQ06T2";
 
 	@GetMapping("/addInscricao/{email}")
 	public String addSubscription(@PathVariable String email) {
