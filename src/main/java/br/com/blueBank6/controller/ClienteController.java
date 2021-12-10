@@ -80,7 +80,12 @@ public class ClienteController {
 
 	@GetMapping(value = "/listar/{id}")
 	public Optional<Cliente> listarId(@PathVariable long id) {
-		return service.findById(id);
+		return service.findById(id);		
+	}
+  
+	@RequestMapping(method = RequestMethod.GET, value = "/listar/cpf/{cpf}")
+	public List<Cliente> listarCpf(@PathVariable String cpf) {
+		return service.findByCpf(cpf);
 	}
 
 	@GetMapping(value = "/listar/cpf/{cpf}")
