@@ -65,7 +65,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 
 | Método |  Caminho                     | Uso                       |
 | :---   | :---                         | :---                      |
-| POST   | <BASE_URL>/transacao/salvar  | Realizar transação. Usar tipo: deposito/transferir/saque |
+| POST   | <BASE_URL>/transacao/salvar  | Realizar transação. Usar tipo: deposito/transferencia/saque |
 | GET    | <BASE_URL>/transacao/listar   | Listar histórico de transações |
 
 - Amazon Simple Notification Service (SNS): <br>
