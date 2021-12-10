@@ -3,8 +3,7 @@ package br.com.blueBank6.controller;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-import com.amazonaws.services.sns.AmazonSNSClient;
-import com.amazonaws.services.sns.model.SubscribeRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +22,8 @@ import br.com.blueBank6.models.Cliente;
 import br.com.blueBank6.service.ClienteService;
 
 
-@RestController(value = "/cliente")
+@RestController
+@RequestMapping("/cliente")
 public class ClienteController {
 
 	@Autowired
@@ -32,7 +32,8 @@ public class ClienteController {
 	@Autowired
 	private AmazonSNSClient snsClient;
 
-	String TOPIC_ARN = "arn:aws:sns:us-east-1:965934840569:SQ6T2";
+	String TOPIC_ARN = "arn:aws:sns:us-east-2:965934840569:SQ06T2";
+	
 	@PostMapping("/salvar")
 	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDto dto) {
 		try {
@@ -83,10 +84,7 @@ public class ClienteController {
 		return service.findById(id);		
 	}
   
-	@RequestMapping(method = RequestMethod.GET, value = "/listar/cpf/{cpf}")
-	public List<Cliente> listarCpf(@PathVariable String cpf) {
-		return service.findByCpf(cpf);
-	}
+	
 
 	@GetMapping(value = "/listar/cpf/{cpf}")
 	public ResponseEntity<Object> listarPorCpf(@PathVariable String cpf) {

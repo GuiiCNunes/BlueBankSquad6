@@ -3,14 +3,12 @@ package br.com.blueBank6.service;
 import java.io.IOException;
 import java.util.List;
 
-import br.com.blueBank6.models.Conta;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.blueBank6.models.Transacao;
 import br.com.blueBank6.repository.TransacaoRepository;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TransacaoService {

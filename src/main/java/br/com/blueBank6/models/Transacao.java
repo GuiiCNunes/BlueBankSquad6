@@ -27,7 +27,7 @@ public class Transacao {
 	@Column(name = "data_emissao", nullable = false, columnDefinition = "DATETIME")
 	private LocalDateTime data;
 
-	@Column(name = "tipo", nullable = false, length = 10)
+	@Column(name = "tipo", nullable = false, length = 20)
 	private String tipo;
 
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,##00.00")

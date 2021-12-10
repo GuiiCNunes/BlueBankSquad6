@@ -14,7 +14,7 @@ public class AwsSnsController {
 	@Autowired
 	private AmazonSNSClient snsClient;
 
-	String TOPIC_ARN =;
+	String TOPIC_ARN ="";
 
 	@GetMapping("/addInscricao/{email}")
 	public String addSubscription(@PathVariable String email) {
