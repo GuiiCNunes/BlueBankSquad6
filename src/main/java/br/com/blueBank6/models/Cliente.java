@@ -2,7 +2,6 @@ package br.com.blueBank6.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +14,6 @@ import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
@@ -29,7 +27,7 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	public Cliente(Long id,String nomeCompleto, String apelido, String cpf, LocalDate dataNascimento, String nomeMae,
+	public Cliente(Long id, String nomeCompleto, String apelido, String cpf, LocalDate dataNascimento, String nomeMae,
 			BigDecimal renda, String estadoCivil, String escolaridade, String genero, String email, String telefone,
 			Endereco endereco, Conta conta, Rg rg) {
 
