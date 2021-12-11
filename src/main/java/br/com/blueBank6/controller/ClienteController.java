@@ -32,7 +32,7 @@ public class ClienteController {
 	@Autowired
 	private AmazonSNSClient snsClient;
 
-	String TOPIC_ARN = "arn:aws:sns:us-east-2:965934840569:SQ06T2";
+	String TOPIC_ARN = "";
 	
 	@PostMapping("/salvar")
 	public ResponseEntity<Object> salvarCliente(@RequestBody ClienteDto dto) {
