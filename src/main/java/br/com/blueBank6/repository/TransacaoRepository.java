@@ -10,6 +10,6 @@ import br.com.blueBank6.models.Transacao;
 @Repository
 public interface TransacaoRepository extends JpaRepository<Transacao, Long> {
 
-    @Query(value = "SELECT * FROM TRANSACOES WHERE ID_CONTA_ORIGEM = ?1 OR ID_CONTA_DESTINO = ?1" , nativeQuery = true)
+    @Query(value = "SELECT * FROM transacoes WHERE ID_CONTA_ORIGEM = ?1 OR ID_CONTA_DESTINO = ?1" , nativeQuery = true)
     List<Transacao> findAllByContaId(Long contaId);	
 }

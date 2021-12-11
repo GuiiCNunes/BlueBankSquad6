@@ -8,7 +8,7 @@ public class HomeController {
 	
 	@RequestMapping("/")
 	public String home() {
-		return "Seja bem vindo a API SquadPan6";
+		return "Seja bem vindo a API dos Code Poltergeists";
 	}
 
 }
