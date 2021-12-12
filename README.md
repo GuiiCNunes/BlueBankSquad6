@@ -103,3 +103,5 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | POST   | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar  | Realizar transação. Usar tipo: deposito/transferencia/saque |
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/listar   | Listar histórico de transações |
 
+## Lambda:
+<img src="./assets/img/aws/lambda-2.png" width="100%" />
