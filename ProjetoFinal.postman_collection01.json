@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "9af05242-9dae-46a7-af6a-b89969129380",
+		"name": "ProjetoFinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Clientes API GateWay",
+					"item": [
+						{
+							"name": "Listar Clientes API GateWay",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"clientes",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Clientes ID API GateWay",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/{id}",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"clientes",
+										"listar",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Clientes CPF GateWay",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cpf/{cpf}",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"clientes",
+										"listar",
+										"cpf",
+										"{cpf}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar Clientes API Gateway",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "  {\r\n       \r\n        \"nomeCompleto\": \"  Miromar teixeira \",\r\n        \"apelido\": \"Jun\",\r\n        \"cpf\": \"00161637108\",\r\n        \"dataNascimento\": \"03/05/1985\",\r\n        \"nomeMae\": \"MARIA\",\r\n        \"renda\": 15000.00,\r\n        \"estadoCivil\": \"Casado\",\r\n        \"escolaridade\": \"Superior Completo\",\r\n        \"genero\": \"Masculino\",\r\n        \"email\": \"aline.e.miromarjr@gmail.com\",\r\n        \"telefone\": \"62 994026363\",\r\n        \"endereco\": {\r\n            \"id\": 1,\r\n            \"cep\": \"74215020\",\r\n            \"logradouro\": \"Av T7\",\r\n            \"bairro\": \"JD America\",\r\n            \"numero\": 1592,\r\n            \"cidade\": \"APARECIDA DE GOIANIA\",\r\n            \"uf\": \"GO\",\r\n            \"pais\": \"Brasil\",\r\n            \"complemento\": \"qd 50 casa 26 \",\r\n            \"pontoReferencia\": \"Prox a escola\"\r\n        },\r\n        \"conta\": {\r\n            \"id\": 1,\r\n            \"status\": true,\r\n         \r\n            \"senha\": 321654\r\n        },\r\n        \"rg\": {\r\n            \"id\": 1,\r\n            \"numeroRg\": \"001\",\r\n            \"dataEmissao\": \"01/01/2010\",\r\n            \"orgaoEmissor\": \"SSP-GO\"\r\n        }\r\n    }\r\n  ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/atualizar/{id}",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"clientes",
+										"atualizar",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar Clientes API Gateway",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "  {\r\n       \r\n        \"nomeCompleto\": \"  Miromar teixeira \",\r\n        \"apelido\": \"Jun\",\r\n        \"cpf\": \"00161637108\",\r\n        \"dataNascimento\": \"03/05/1985\",\r\n        \"nomeMae\": \"MARIA\",\r\n        \"renda\": 15000.00,\r\n        \"estadoCivil\": \"Casado\",\r\n        \"escolaridade\": \"Superior Completo\",\r\n        \"genero\": \"Masculino\",\r\n        \"email\": \"aline.e.miromarjr@gmail.com\",\r\n        \"telefone\": \"62 994026363\",\r\n        \"endereco\": {\r\n            \"id\": 1,\r\n            \"cep\": \"74215020\",\r\n            \"logradouro\": \"Av T7\",\r\n            \"bairro\": \"JD America\",\r\n            \"numero\": 1592,\r\n            \"cidade\": \"APARECIDA DE GOIANIA\",\r\n            \"uf\": \"GO\",\r\n            \"pais\": \"Brasil\",\r\n            \"complemento\": \"qd 50 casa 26 \",\r\n            \"pontoReferencia\": \"Prox a escola\"\r\n        },\r\n        \"conta\": {\r\n            \"id\": 1,\r\n            \"status\": true,\r\n         \r\n            \"senha\": 321654\r\n        },\r\n        \"rg\": {\r\n            \"id\": 1,\r\n            \"numeroRg\": \"001\",\r\n            \"dataEmissao\": \"01/01/2010\",\r\n            \"orgaoEmissor\": \"SSP-GO\"\r\n        }\r\n    }\r\n  ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/deletar/{id}",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"clientes",
+										"deletar",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cadastrar Clientes API Gateway",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \r\n\"nomeCompleto\" : \"  Miromar Francisco de Alcanatara Junior \",\r\n\"apelido\" : \"Junior\",\r\n\"cpf\" : \"00161637108\",\r\n\"dataNascimento\" : \"03/05/1985\",\r\n\"nomeMae\" : \"Dirce Candida de Alcantara \",\r\n\"renda\" : \"6000\",\r\n\"estadoCivil\" : \"Casado\",\r\n\"escolaridade\" : \"Superior Completo\",\r\n\"genero\" : \"Masculino\",\r\n\"email\" : \"miromarjunior@gmail.com\",\r\n\"telefone\" : \"62 994026363\",\r\n\"endereco\": {\r\n            \"cep\": \"74920530\",\r\n            \"logradouro\": \"Rua Francisco Ferreira dos Santos Azevedo\",\r\n            \"bairro\": \"Cidade Satelite São Luiz\",\r\n            \"numero\": \"SN\",\r\n            \"cidade\": \"APARECIDA DE GOIANIA\",\r\n            \"uf\": \"GO\",\r\n            \"pais\": \"Brasil\",\r\n            \"complemento\": \"qd 50 casa 26 \",\r\n            \"pontoReferencia\": \"Condominio Tagore Biran\"\r\n},\r\n\"rg\" : {\r\n            \"numeroRg\": \"5607001\",\r\n            \"dataEmissao\": \"01/04/2001\",\r\n            \"orgaoEmissor\": \"DGPC-GO\"\r\n        },\r\n        \"conta\" : {\r\n             \"status\": \"true\",\r\n              \"senha\": \"321654\"\r\n        }\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/salvar",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"clientes",
+										"salvar"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Deletar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Miromar\",\r\n    \"sobrnome\": \"Junior\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/deletar/9",
+							"protocol": "http",
+							"host": [
+								"squad6t2ebs1-env",
+								"eba-rafmcyz8",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"cliente",
+								"deletar",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \r\n\"nomeCompleto\" : \"  Miromar Francisco de Alcanatara Junior \",\r\n\"apelido\" : \"Junior\",\r\n\"cpf\" : \"00161637108\",\r\n\"dataNascimento\" : \"03/05/1985\",\r\n\"nomeMae\" : \"Dirce Candida de Alcantara \",\r\n\"renda\" : \"6000\",\r\n\"estadoCivil\" : \"Casado\",\r\n\"escolaridade\" : \"Superior Completo\",\r\n\"genero\" : \"Masculino\",\r\n\"email\" : \"miromarjunior@gmail.com\",\r\n\"telefone\" : \"62 994026363\",\r\n\"endereco\": {\r\n            \"cep\": \"74920530\",\r\n            \"logradouro\": \"Rua Francisco Ferreira dos Santos Azevedo\",\r\n            \"bairro\": \"Cidade Satelite São Luiz\",\r\n            \"numero\": \"26\",\r\n            \"cidade\": \"APARECIDA DE GOIANIA\",\r\n            \"uf\": \"GO\",\r\n            \"pais\": \"Brasil\",\r\n            \"complemento\": \"qd 50 casa 26 \",\r\n            \"pontoReferencia\": \"Condominio Tagore Biran\"\r\n},\r\n\"rg\" : {\r\n            \"numeroRg\": \"5607001\",\r\n            \"dataEmissao\": \"01/04/2001\",\r\n            \"orgaoEmissor\": \"DGPC-GO\"\r\n        },\r\n        \"conta\" : {\r\n             \"status\": \"true\",\r\n              \"senha\": \"321654\"\r\n        }\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/salvar",
+							"protocol": "http",
+							"host": [
+								"squad6t2ebs1-env",
+								"eba-rafmcyz8",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"cliente",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "cpf",
+								"value": "02685252185",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/listar",
+							"protocol": "http",
+							"host": [
+								"squad6t2ebs1-env",
+								"eba-rafmcyz8",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"cliente",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n       \r\n        \"nomeCompleto\": \"  Al teixeira \",\r\n        \"apelido\": \"Jun\",\r\n        \"cpf\": \"00161637108\",\r\n        \"dataNascimento\": \"03/05/1985\",\r\n        \"nomeMae\": \"MARIA\",\r\n        \"renda\": 15000.00,\r\n        \"estadoCivil\": \"Casado\",\r\n        \"escolaridade\": \"Superior Completo\",\r\n        \"genero\": \"Masculino\",\r\n        \"email\": \"aline.e.miromarjr@gmail.com\",\r\n        \"telefone\": \"62 994026363\",\r\n        \"endereco\": {\r\n            \"id\": 1,\r\n            \"cep\": \"74215020\",\r\n            \"logradouro\": \"Av T7\",\r\n            \"bairro\": \"JD America\",\r\n            \"numero\": 1592,\r\n            \"cidade\": \"APARECIDA DE GOIANIA\",\r\n            \"uf\": \"GO\",\r\n            \"pais\": \"Brasil\",\r\n            \"complemento\": \"qd 50 casa 26 \",\r\n            \"pontoReferencia\": \"Prox a escola\"\r\n        },\r\n        \"conta\": {\r\n            \"id\": 1,\r\n            \"status\": true,\r\n         \r\n            \"senha\": 321654\r\n        },\r\n        \"rg\": {\r\n            \"id\": 1,\r\n            \"numeroRg\": \"001\",\r\n            \"dataEmissao\": \"01/01/2010\",\r\n            \"orgaoEmissor\": \"SSP-GO\"\r\n        }\r\n    }\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/atualizar/1",
+							"protocol": "http",
+							"host": [
+								"squad6t2ebs1-env",
+								"eba-rafmcyz8",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"cliente",
+								"atualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transacoes",
+			"item": [
+				{
+					"name": "Transacoes API GateWay",
+					"item": [
+						{
+							"name": "Extrato Transacoes API Gateway",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/extrato/{id}",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"transacao",
+										"extrato",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Efetuar Transacoes API Gateway",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \r\n    \"tipo\": \"deposito\",\r\n    \"valor\": 1000.0,\r\n    \"conta\": {\r\n        \"id\" : 1\r\n    }\r\n}\r\n\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"transacao",
+										"salvar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Efetuar Transferencia API Gateway",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tipo\": \"transferencia\",\r\n    \"valor\": 300.0,\r\n    \"conta\": {\r\n        \"id\": 1\r\n    },\r\n    \"destino\": {\r\n        \"id\": 2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar",
+									"protocol": "https",
+									"host": [
+										"8gno5jdvk7",
+										"execute-api",
+										"us-east-2",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"blueBank",
+										"transacao",
+										"salvar"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Efetuar Transacao dep ou saque",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \r\n    \"tipo\": \"deposito\",\r\n    \"valor\": 1000.0,\r\n    \"conta\": {\r\n        \"id\" : 5\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/salvar",
+							"protocol": "http",
+							"host": [
+								"squad6t2ebs1-env",
+								"eba-rafmcyz8",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"transacao",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transacao Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"transferencia\",\r\n    \"valor\": 300.0,\r\n    \"conta\": {\r\n        \"id\": 1\r\n    },\r\n    \"destino\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/salvar",
+							"protocol": "http",
+							"host": [
+								"squad6t2ebs1-env",
+								"eba-rafmcyz8",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"transacao",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transacao extrato",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/extrato/1",
+							"protocol": "http",
+							"host": [
+								"squad6t2ebs1-env",
+								"eba-rafmcyz8",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"transacao",
+								"extrato",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
