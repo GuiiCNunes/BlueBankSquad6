@@ -100,7 +100,6 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cliente/listar/{id}       | Listar clientes pelo ID   |
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cliente/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cliente/deletar/{id}      | Deletar clientes pelo ID |
-
 | POST   | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar  | Realizar transação. Usar tipo: deposito/transferencia/saque |
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/listar   | Listar histórico de transações |
 
