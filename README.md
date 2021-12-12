@@ -90,7 +90,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | <BASE_URL>/addInscricao/{email} | Mandar email para inscrição no SNS    |
 | <BASE_URL>/enviarNotificacao    | Mandar notificação para emails cadastrados |
 
-- API Gataway
+- API Gateway
 
 | Método |  Caminho                     | Uso                       |
 | :---   | :---                         | :---                      |
@@ -105,3 +105,5 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 
 ## Lambda:
 <img src="./assets/img/aws/lambda-2.png" width="100%" />
+
+## AWS imagens:
