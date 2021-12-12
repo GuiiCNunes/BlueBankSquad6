@@ -12,9 +12,24 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 ### Tecnologias utilizadas:
 
 - Spring Boot (Maven e JDK 11)
-- DB Relacional MySQL
+- Banco de Dados Relacional MySQL
 - Swagger
+- Postman
 - Deploy na AWS
+
+- Metodologias Ágeis:
+  - Jira (Kanban)
+
+- AWS Cloud:
+  - Amazon Simple Notification Service (SNS)
+  - API Gateway
+  - Elastic BeanStalk
+  - Code Pipeline
+  - Code Commit
+  - Code Build 
+  - Lambda
+  - RDS 
+  - S3
 
 ## Diagrama de Entidade Relacionamento (DER):
 <img src="./db/der.png" width="100%" />
@@ -41,14 +56,14 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 ## URL para acesso local:
   - http://localhost:5000
 
+## URL para acesso na AWS:
+- http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/
 
 ## Acessar a documentação (Swagger):
-- http://localhost:5000/swagger-ui.html#
+- <BASE_URL>/swagger-ui.html#
  
 
 ## Endpoints:
-
-
 
 - Clientes <br>
 
@@ -56,7 +71,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | :---   | :---                         | :---                      |
 | POST   | <BASE_URL>/cliente/salvar            | Cadastrar cliente         |
 | POST   | <BASE_URL>/cliente/atualizar/{id}    | Atualizar dados cadastrados dos clientes por ID|
-| GET    | <BASE_URL>/cliente/listar            | Listar todos os clientes  |
+| GET    | <BASE_URL>/cliente/listar            | Listar todos os clientes cadastrados |
 | GET    | <BASE_URL>/cliente/listar/{id}       | Listar clientes pelo ID   |
 | GET    | <BASE_URL>/cliente/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
 | GET    | <BASE_URL>/cliente/deletar/{id}      | Deletar clientes pelo ID |
@@ -75,4 +90,17 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | <BASE_URL>/addInscricao/{email} | Mandar email para inscrição no SNS    |
 | <BASE_URL>/enviarNotificacao    | Mandar notificação para emails cadastrados |
 
+- API Gataway
+
+| Método |  Caminho                     | Uso                       |
+| :---   | :---                         | :---                      |
+| POST   | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cliente/salvar            | Cadastrar cliente         |
+| POST   | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cliente/atualizar/{id}    | Atualizar dados cadastrados dos clientes por ID|
+| GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar  | Listar todos os clientes cadastrados |
+| GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cliente/listar/{id}       | Listar clientes pelo ID   |
+| GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cliente/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
+| GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/listar/cliente/deletar/{id}      | Deletar clientes pelo ID |
+
+| POST   | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar  | Realizar transação. Usar tipo: deposito/transferencia/saque |
+| GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/listar   | Listar histórico de transações |
 
