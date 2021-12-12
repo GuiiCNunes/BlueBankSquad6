@@ -107,3 +107,5 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 <img src="./assets/img/aws/lambda-2.png" width="100%" />
 
 ## AWS imagens:
+
+- [Página Home](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/pagina-home.jpg?raw=true)<br />
