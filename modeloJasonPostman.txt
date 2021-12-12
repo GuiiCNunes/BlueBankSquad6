@@ -9,7 +9,7 @@ se for listar pelo CPF, basta adicionar /cpf/{numero do cpf}
 
 Modelo de Post/save
 
-
+Api Gateway :  https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/salvar
  URL :   http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/salvar
  
  {
@@ -52,7 +52,7 @@ Modelo de Post/save
 
 
 Modelo para Put/Update
-
+api gateway : https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/atualizar/{id}
 http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/atualizar/1
    
   {
@@ -94,10 +94,12 @@ http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/atua
         }
     }
       
-
+Link para deletar cliente
+Api Gateway :  https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/clientes/deletar/{id}
+URL : http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/deletar/{id}
 
 Modelo para Trasação  / saque ou depositoPOST
-
+Api Gateway : https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar
 http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/salvar
 o tipo pode ser  "deposito" ou "transferencia" ou "saque"
 
@@ -110,6 +112,7 @@ o tipo pode ser  "deposito" ou "transferencia" ou "saque"
 }
 
 Modelo para Transferencia POST
+Api Gateway : https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar
 http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/salvar
 {
     "tipo": "transferencia",
@@ -123,6 +126,7 @@ http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/sa
 }
 
 extrato
+Api Gateway : https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/extrato/{id}
 Url : http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/extrato/1
 adicional {id} no final da URL para mostrar extrato de apenas 01 conta
 
