@@ -54,7 +54,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
   ```
 
 ## URL para acesso local:
-  - http://localhost:5000
+  - http://localhost:8080
 
 ## URL para acesso na AWS:
 - http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/
