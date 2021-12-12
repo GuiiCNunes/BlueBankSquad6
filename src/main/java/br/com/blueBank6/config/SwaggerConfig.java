@@ -32,7 +32,7 @@ public class SwaggerConfig {
 	private ApiInfoBuilder informacoesApi() {
 		ApiInfoBuilder informacoesApi = new ApiInfoBuilder();
 
-		informacoesApi.title("BLUEBANK - SQUAD 6");
+		informacoesApi.title("BLUEBANK - SQUAD 6 T2 - Code Poltergeists");
 		informacoesApi.description("API para cadastro de clientes no BlueBank, e extrato de suas transações");
 		informacoesApi.version("1.0");
 
