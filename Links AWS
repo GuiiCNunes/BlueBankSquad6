@@ -10,6 +10,8 @@ https://us-east-2.console.aws.amazon.com/codesuite/codebuild/965934840569/projec
 
 SNS
 https://us-east-2.console.aws.amazon.com/sns/v3/home?region=us-east-2#/topic/arn:aws:sns:us-east-2:965934840569:SQ06T2
+http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/enviarNotificacao
+
 
 CodePipeLine
 https://us-east-2.console.aws.amazon.com/codesuite/codepipeline/pipelines/squad6-t2-pipeline-01/view?region=us-east-2
