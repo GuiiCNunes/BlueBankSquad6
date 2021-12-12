@@ -1,0 +1,129 @@
+
+Listar Clientes 
+
+url : http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/listar
+se for listar pelo ID basta adicionar o ID ao final da URL
+se for listar pelo CPF, basta adicionar /cpf/{numero do cpf}
+
+
+
+Modelo de Post/save
+
+
+ URL :   http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com
+ 
+ {
+    
+"nomeCompleto" : "  Miromar Junior ",
+"apelido" : "Jun",
+"cpf" : "00161637108",
+"dataNascimento" : "03/05/1985",
+"nomeMae" : "MARIA",
+"renda" : "15000",
+"estadoCivil" : "Casado",
+"escolaridade" : "Superior Completo",
+"genero" : "Masculino",
+"email" : "miromarjunior@gmail.com",
+"telefone" : "62 994026363",
+"endereco": {
+            "cep": "74215020",
+            "logradouro": "Av T7",
+            "bairro": "JD America",
+            "numero": "1592",
+            "cidade": "APARECIDA DE GOIANIA",
+            "uf": "GO",
+            "pais": "Brasil",
+            "complemento": "qd 50 casa 26 ",
+            "pontoReferencia": "Prox a escola"
+},
+"rg" : {
+            "numeroRg": "001",
+            "dataEmissao": "01/01/2010",
+            "orgaoEmissor": "SSP-GO"
+        },
+        "conta" : {
+             "status": "true",
+              "senha": "321654"
+        }
+}
+ 
+ 
+ 
+
+
+Modelo para Put/Update
+
+http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/atualizar/1
+   
+  {
+       
+        "nomeCompleto": "  Aline teixeira ",
+        "apelido": "Jun",
+        "cpf": "00161637108",
+        "dataNascimento": "03/05/1985",
+        "nomeMae": "MARIA",
+        "renda": 15000.00,
+        "estadoCivil": "Casado",
+        "escolaridade": "Superior Completo",
+        "genero": "Masculino",
+        "email": "aline.e.miromarjr@gmail.com",
+        "telefone": "62 994026363",
+        "endereco": {
+            "id": 1,
+            "cep": "74215020",
+            "logradouro": "Av T7",
+            "bairro": "JD America",
+            "numero": 1592,
+            "cidade": "APARECIDA DE GOIANIA",
+            "uf": "GO",
+            "pais": "Brasil",
+            "complemento": "qd 50 casa 26 ",
+            "pontoReferencia": "Prox a escola"
+        },
+        "conta": {
+            "id": 1,
+            "status": true,
+         
+            "senha": 321654
+        },
+        "rg": {
+            "id": 1,
+            "numeroRg": "001",
+            "dataEmissao": "01/01/2010",
+            "orgaoEmissor": "SSP-GO"
+        }
+    }
+      
+
+
+Modelo para Trasação  / saque ou depositoPOST
+
+http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/salvar
+o tipo pode ser  "deposito" ou "transferencia" ou "saque"
+
+{
+    "tipo": "deposito",
+    "valor": 1000.0,
+    "conta": {
+        "id": 1
+    }
+}
+
+Modelo para Transferencia POST
+http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/salvar
+{
+    "tipo": "transferencia",
+    "valor": 1000.0,
+    "conta": {
+        "id": 1
+    },
+    "destino": {
+        "id": 3
+    }
+}
+
+extrato
+Url : http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/transacao/extrato/1
+adicional {id} no final da URL para mostrar extrato de apenas 01 conta
+
+
