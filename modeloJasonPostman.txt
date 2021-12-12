@@ -10,7 +10,7 @@ se for listar pelo CPF, basta adicionar /cpf/{numero do cpf}
 Modelo de Post/save
 
 
- URL :   http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com
+ URL :   http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/cliente/salvar
  
  {
     
