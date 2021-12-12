@@ -1,15 +1,19 @@
-# BlueBankSquad6
 
-Desafio final do curso da Gama Academy em parceria como Banco Pan.
+<h1 align="center" > PROJETO BLUE BANK</b> </h1>
+Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 semanas oferecido pelo banco PAN em parceria com a Gama Academy.
+<hr>
 
-### Squad 6, Code Poltergeist:
+<h3>:facepunch: Equipe Code Poltergeist:</b></h3>
+
 - Guilherme Nunes
 - Mariana Fonseca
 - Miromar Junior
 - Vinicius Menolli
 - Jessica Kopps
 
-### Tecnologias utilizadas:
+<hr>
+
+<h3 id="sumario"> 📑 Tecnologias e recursos utilizados </h3>
 
 - Spring Boot (Maven e JDK 11)
 - Banco de Dados Relacional MySQL
@@ -31,39 +35,42 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
   - RDS 
   - S3
 
-## Diagrama de Entidade Relacionamento (DER):
-<img src="./db/der.png" width="100%" />
 
+<hr>
 
-## Utilizando a aplicação:
+<h3 id="requisitos"> :gear: Requisitos para rodar a aplicação</h3>
 
 - Requisitos:
+  ```
   - Maven e JDK 11
-- Passo a passo:
-  - No terminal, dentro da pasta da aplicação, gere o .jar executando o comando:
-  ```
-  mvn clean install -Dskiptests
-  ```
-  Caso o código acima não funcione, execute:
-  ```
-  ./mvnw clean install -DskipTests
-  ```
-  - Rodar a aplicação (dentro da pasta target, onde está o arquivo .jar):
-  ```
-  java -jar api-spring-blueBank-0.0.1-SNAPSHOT.jar  
   ```
 
-## URL para acesso local:
+- Gere o <b>.jar</b> da aplicação executando o comando no terminal:
+    ```shell
+    mvn clean install -Dskiptests
+    ```
+
+- Para rodar o <b>.jar</b> vá até a pasta do projeto pelo terminal e rode o comando:
+    ```shell
+    java -jar -Dspring.profiles.active=localdebug blue-bank-0.0.1-SNAPSHOT.jar
+     ```
+     
+  <hr>
+  
+  
+<h3 id="db"> :open_file_folder: Banco de Dados</h3>
+<h4 id="der">Diagrama de entidade de relacionamento: </h4>
+<img src="./db/der.png" width="100%" />
+
+<hr>
+
+<h3 id="endpoints"> 🔌 Endpoints</h3>
+
+- URL para acesso local:
   - http://localhost:8080
 
-## URL para acesso na AWS:
-- http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/
-
-## Acessar a documentação (Swagger):
-- <BASE_URL>/swagger-ui.html#
- 
-
-## Endpoints:
+- URL para acesso na AWS:
+  - http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/
 
 - Clientes <br>
 
@@ -75,6 +82,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | GET    | <BASE_URL>/cliente/listar/{id}       | Listar clientes pelo ID   |
 | GET    | <BASE_URL>/cliente/listar/cpf/{cpf}  | Listar clientes pelo CPF  |
 | DELETE | <BASE_URL>/cliente/deletar/{id}      | Deletar clientes pelo ID |
+<br>
 
 - Transação <br>
 
@@ -82,6 +90,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | :---   | :---                         | :---                      |
 | POST   | <BASE_URL>/transacao/salvar  | Realizar transação. Usar tipo: deposito/transferencia/saque |
 | GET    | <BASE_URL>/transacao/listar   | Listar histórico de transações |
+<br>
 
 - Amazon Simple Notification Service (SNS): <br>
 
@@ -89,6 +98,7 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | :---                            | :---                                 |
 | <BASE_URL>/addInscricao/{email} | Mandar email para inscrição no SNS    |
 | <BASE_URL>/enviarNotificacao    | Mandar notificação para emails cadastrados |
+<br>
 
 - API Gateway
 
@@ -103,16 +113,33 @@ Desafio final do curso da Gama Academy em parceria como Banco Pan.
 | POST   | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar  | Realizar transação. Usar tipo: deposito/transferencia/saque |
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/listar   | Listar histórico de transações |
 
-## Lambda:
-<img src="./assets/img/aws/lambda-2.png" width="100%" />
+<hr>
 
-## AWS imagens:
+<h3 id="aws-swagger">:scroll: Swagger UI</h3>
 
-- [Página Home](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/pagina-home.jpg?raw=true)
-- [Elastic Beanstalk](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/elastic-beanstalk.jpg?raw=true)
-- [API Gateway](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/api-gateway.jpg?raw=true)
-- [SNS](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/sns.jpg?raw=true)
-- [RDS](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/rds.jpg?raw=true)
-- [Code Commit](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-commit.jpg?raw=true)
-- [Code Build](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-build.jpg?raw=true)
-- [Code Pipeline](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-pipeline.jpg?raw=true)
+- Acesso local
+  - http://localhost:8080/swagger-ui.html#
+
+- Acesso ao banco de dados da AWS
+  - http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/swagger-ui.html#
+
+
+  <img src="" width="100%" />
+
+<hr>
+
+
+<h3 id="aws-swagger">	:cloud: AWS Cloud </h3>
+
+- Lambda
+  <img src="./assets/img/aws/lambda-2.png" width="100%" />
+  
+- Aws imagens
+  - [Página Home](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/pagina-home.jpg?raw=true)
+  - [Elastic Beanstalk](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/elastic-beanstalk.jpg?raw=true)
+  - [API Gateway](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/api-gateway.jpg?raw=true)
+  - [SNS](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/sns.jpg?raw=true)
+  - [RDS](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/rds.jpg?raw=true)
+  - [Code Commit](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-commit.jpg?raw=true)
+  - [Code Build](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-build.jpg?raw=true)
+  - [Code Pipeline](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-pipeline.jpg?raw=true)
