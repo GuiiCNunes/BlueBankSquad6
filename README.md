@@ -58,7 +58,8 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 <hr>  
   
 <h3 id="db"> :open_file_folder: Banco de Dados</h3>
-<h4 id="der">Diagrama de entidade de relacionamento (DER): </h4>
+
+- Diagrama de entidade de relacionamento (DER): </h4>
 <img src="./db/der.png" width="100%" />
 
 - <a target="_blank" href="./db/blueBank6.sql"> Script SQL do banco de dados</a>
@@ -115,7 +116,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 
 <hr>
 
-<h3 id="swagger">:scroll: Swagger UI</h3>
+<h3 id="swagger">:scroll: Documentação Swagger UI</h3>
 
 - Acesso local
   - http://localhost:8080/swagger-ui.html#
