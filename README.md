@@ -41,17 +41,17 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 <h3 id="requisitos"> :gear: Utilizando a aplicação </h3>
 
 - Requisitos:
-  ```
-  - Maven e JDK 11
-  ```
+  - Maven
+  - JDK 11
+  - MySQL
 
 - Gere o <b>.jar</b> da aplicação executando o comando no terminal:
-    ```shell
+    ```
     mvn clean install -Dskiptests
     ```
 
 - Para rodar o <b>.jar</b> vá até a pasta do projeto pelo terminal e rode o comando:
-    ```shell
+    ```
     java -jar -Dspring.profiles.active=localdebug blue-bank-0.0.1-SNAPSHOT.jar
     ```
 
