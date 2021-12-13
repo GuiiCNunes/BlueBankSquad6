@@ -2,9 +2,8 @@
 <div align="center">
 
 # PROJETO BLUE BANK 
-<br>
+<br></div>
 O projeto Blue Bank é uma API REST de um banco, desenvolvido em Java com o framework Spring Boot e serviços da AWS Cloud. Além disso, é o desafio final do PAN Academy, um curso de formação Java e AWS Cloud, com duração de 10 semanas oferecido pela Gama Academy e pelo Banco PAN.
-</div>
 
 ---
 ### 👻 Equipe Code Poltergeist:
@@ -68,8 +67,6 @@ O projeto Blue Bank é uma API REST de um banco, desenvolvido em Java com o fram
 - Diagrama de entidade de relacionamento (DER):
 <img src="./db/der.png" width="100%" />
 
-
-
 ---
 ### 🔌 Endpoints
 
@@ -78,8 +75,9 @@ O projeto Blue Bank é uma API REST de um banco, desenvolvido em Java com o fram
 
 - URL para acesso na AWS:
   - http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/
+<br>
 
-- Clientes <br>
+- Clientes
 
 | Método |  Caminho                     | Uso                       |
 | :---   | :---                         | :---                      |
@@ -91,7 +89,7 @@ O projeto Blue Bank é uma API REST de um banco, desenvolvido em Java com o fram
 | DELETE | <BASE_URL>/cliente/deletar/{id}      | Deletar clientes pelo ID |
 <br>
 
-- Transação <br>
+- Transação 
 
 | Método |  Caminho                     | Uso                       |
 | :---   | :---                         | :---                      |
@@ -99,7 +97,7 @@ O projeto Blue Bank é uma API REST de um banco, desenvolvido em Java com o fram
 | GET    | <BASE_URL>/transacao/listar   | Listar histórico de transações |
 <br>
 
-- Amazon Simple Notification Service (SNS): <br>
+- Amazon Simple Notification Service (SNS):
 
 |  Caminho                        | Uso                                  |
 | :---                            | :---                                 |
