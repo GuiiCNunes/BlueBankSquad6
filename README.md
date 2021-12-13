@@ -62,6 +62,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 <h4 id="der">Diagrama de entidade de relacionamento: </h4>
 <img src="./db/der.png" width="100%" />
 
+- <a target="_blank" href="./db/blueBank6.sql"> Script SQL do banco de dados</a>
 <hr>
 
 <h3 id="endpoints"> 🔌 Endpoints</h3>
@@ -151,3 +152,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
   - [Code Commit](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-commit.jpg?raw=true)
   - [Code Build](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-build.jpg?raw=true)
   - [Code Pipeline](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-pipeline.jpg?raw=true)
+  
+  <hr>
+<h4 id="der">Apresentação do Desafio final </h4>
+- <a target="_blank" href="./Apresentacao_CODE_POLTERGEIST.pdf"> Confira nossa apresentação</a>
