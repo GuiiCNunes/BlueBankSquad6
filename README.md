@@ -2,7 +2,7 @@
 <div align="center">
 
 # PROJETO BLUE BANK 
-<br></div>
+</div>
 O projeto Blue Bank é uma API REST de um banco, desenvolvido em Java com o framework Spring Boot e serviços da AWS Cloud. Além disso, é o desafio final do PAN Academy, um curso de formação Java e AWS Cloud, com duração de 10 semanas oferecido pela Gama Academy e pelo Banco PAN.
 
 ---
