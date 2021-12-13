@@ -3,7 +3,7 @@
 Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 semanas oferecido pelo banco PAN em parceria com a Gama Academy.
 <hr>
 
-<h3>:facepunch: Equipe Code Poltergeist:</b></h3>
+<h3>:ghost: Equipe Code Poltergeist:</b></h3>
 
 - Guilherme Nunes
 - Mariana Fonseca
@@ -53,7 +53,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 - Para rodar o <b>.jar</b> vá até a pasta do projeto pelo terminal e rode o comando:
     ```shell
     java -jar -Dspring.profiles.active=localdebug blue-bank-0.0.1-SNAPSHOT.jar
-     ```
+    ```
      
   <hr>
   
@@ -122,9 +122,17 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 
 - Acesso ao banco de dados da AWS
   - http://squad6t2ebs1-env.eba-rafmcyz8.us-east-2.elasticbeanstalk.com/swagger-ui.html#
+<br>
 
+  <img src="./assets/img/swagger/Swagger.png" width="100%" />
+<br>
 
-  <img src="" width="100%" />
+- Swagger imagens
+   - [AWS-SNS](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-sns.png?raw=true)
+   - [Cliente Controller](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-clilente-controller.png?raw=true)
+   - [Home Controller](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-home-controller.png?raw=true)
+   - [Transação Controller](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-transacao.png?raw=true)
+   - [Models](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-models.png?raw=true)
 
 <hr>
 
