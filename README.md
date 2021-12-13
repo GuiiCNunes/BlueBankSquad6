@@ -1,12 +1,13 @@
 
 <div align="center">
 
-***PROJETO BLUE BANK*** <br>
+# PROJETO BLUE BANK 
+<br>
 Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 semanas oferecido pelo banco PAN em parceria com a Gama Academy.
 </div>
 
 ---
-***Equipe Code Poltergeist:***
+### Equipe Code Poltergeist:
 
 - Guilherme Nunes
 - Mariana Fonseca
@@ -15,7 +16,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 - Jessica Kopps
 
 ---
-📑 ***Tecnologias e recursos utilizados </h3>***
+### 📑 Tecnologias e recursos utilizados
 
 - Spring Boot (Maven e JDK 11)
 - Banco de Dados Relacional MySQL
@@ -37,9 +38,8 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
   - RDS 
   - S3
 
-
 ---
-:gear: ***Utilizando a aplicação***
+###  :gear: Utilizando a aplicação
 
 - Requisitos:
   - Maven
@@ -60,9 +60,8 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
     java -jar -Dspring.profiles.active=localdebug blue-bank-0.0.1-SNAPSHOT.jar
     ```
 
-
 ---
-***Banco de Dados***
+### Banco de Dados
 
 - Diagrama de entidade de relacionamento (DER):
 <img src="./db/der.png" width="100%" />
@@ -70,7 +69,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 - <a target="_blank" href="./db/blueBank6.sql"> Script SQL do banco de dados</a>
 
 ---
-🔌 ***Endpoints***
+### 🔌 Endpoints
 
 - URL para acesso local:
   - http://localhost:8080
@@ -120,7 +119,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/listar   | Listar histórico de transações |
 
 ---
-:scroll: ***Documentação Swagger UI***
+### :scroll: Documentação Swagger UI
 
 - Acesso local
   - http://localhost:8080/swagger-ui.html#
@@ -140,7 +139,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
    - [Models](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-models.png?raw=true)
 
 ---
-:cloud: ***AWS Cloud***
+### :cloud: AWS Cloud
 
 - Lambda
   <img src="./assets/img/aws/lambda-2.png" width="100%" />
