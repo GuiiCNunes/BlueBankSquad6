@@ -153,6 +153,6 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
   - [Code Build](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-build.jpg?raw=true)
   - [Code Pipeline](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-pipeline.jpg?raw=true)
   
-  <hr>
+<hr>
 <h4 id="der">Apresentação do Desafio final </h4>
 - <a target="_blank" href="./Apresentacao_CODE_POLTERGEIST.pdf"> Confira nossa apresentação</a>
