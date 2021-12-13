@@ -55,7 +55,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
     ./mvnw clean install -DskipTests
     ```
 
-- Para rodar a aplicação, vá até a pasta target do projeto, onde está o arquivo .jar, e o comando:
+- Para rodar a aplicação, vá até a pasta target do projeto, onde está o arquivo .jar, e rode o comando:
     ```
     java -jar -Dspring.profiles.active=localdebug blue-bank-0.0.1-SNAPSHOT.jar
     ```
