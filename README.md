@@ -7,7 +7,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 </div>
 
 ---
-### Equipe Code Poltergeist:
+### 👻 Equipe Code Poltergeist:
 
 - Guilherme Nunes
 - Mariana Fonseca
@@ -39,7 +39,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
   - S3
 
 ---
-###  :gear: Utilizando a aplicação
+### ⚙️ Utilizando a aplicação
 
 - Requisitos:
   - Maven
@@ -61,7 +61,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
     ```
 
 ---
-### Banco de Dados
+### 📁 Banco de Dados
 
 - Diagrama de entidade de relacionamento (DER):
 <img src="./db/der.png" width="100%" />
@@ -119,7 +119,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/listar   | Listar histórico de transações |
 
 ---
-### :scroll: Documentação Swagger UI
+### 🧾 Documentação Swagger UI
 
 - Acesso local
   - http://localhost:8080/swagger-ui.html#
@@ -139,7 +139,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
    - [Models](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-models.png?raw=true)
 
 ---
-### :cloud: AWS Cloud
+### ☁️ AWS Cloud
 
 - Lambda
   <img src="./assets/img/aws/lambda-2.png" width="100%" />
@@ -155,5 +155,5 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
   - [Code Pipeline](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-pipeline.jpg?raw=true)
   
 ---
-***Apresentação do Desafio final***
+### 📑 Apresentação do Desafio final
 - <a target="_blank" href="./Apresentacao_CODE_POLTERGEIST.pdf"> Confira nossa apresentação</a>
