@@ -129,6 +129,7 @@ O projeto Blue Bank é uma API REST de um banco, desenvolvido em Java com o fram
 <img src="./assets/img/swagger/Swagger.png" width="100%" />
 
 - Swagger imagens
+<br>
   - [AWS-SNS](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-sns.png?raw=true)
   - [Cliente Controller](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-clilente-controller.png?raw=true)
   - [Home Controller](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-home-controller.png?raw=true)
