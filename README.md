@@ -138,10 +138,14 @@ O projeto Blue Bank é uma API REST de um banco, desenvolvido em Java com o fram
 ---
 ### ☁️ AWS Cloud
 
-- Lambda
+- Lambda 
+<br>
+
   <img src="./assets/img/aws/lambda-2.png" width="100%" />
   
 - AWS imagens
+<br>
+
   - [Página Home](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/pagina-home.jpg?raw=true)
   - [Elastic Beanstalk](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/elastic-beanstalk.jpg?raw=true)
   - [API Gateway](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/api-gateway.jpg?raw=true)
