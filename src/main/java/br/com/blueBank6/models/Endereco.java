@@ -22,19 +22,19 @@ public class Endereco {
 	private String cep;
 
 	@NotNull
-	@Column(name = "logradouro", nullable = false, length = 30)
+	@Column(name = "logradouro", nullable = false, length = 100)
 	private String logradouro;
 
 	@NotNull
-	@Column(name = "bairro", nullable = false, length = 20)
+	@Column(name = "bairro", nullable = false, length = 50)
 	private String bairro;
 
 	@NotNull
-	@Column(name = "numero", nullable = false, length = 5)
+	@Column(name = "numero", nullable = false, length = 10)
 	private Integer numero;
 
 	@NotNull
-	@Column(name = "cidade", nullable = false, length = 20)
+	@Column(name = "cidade", nullable = false, length = 50)
 	private String cidade;
 
 	@NotNull
@@ -42,13 +42,13 @@ public class Endereco {
 	private String uf;
 
 	@NotNull
-	@Column(name = "pais", nullable = false, length = 10)
+	@Column(name = "pais", nullable = false, length = 30)
 	private String pais;
 
-	@Column(name = "complemento", nullable = false, length = 50)
+	@Column(name = "complemento", nullable = false, length = 100)
 	private String complemento;
 
-	@Column(name = "pontoReferencia", nullable = false, length = 50)
+	@Column(name = "pontoReferencia", nullable = false, length = 100)
 	private String pontoReferencia;
 
 	public Long getId() {
