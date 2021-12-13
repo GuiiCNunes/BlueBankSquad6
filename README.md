@@ -38,7 +38,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 
 <hr>
 
-<h3 id="requisitos"> :gear: Requisitos para rodar a aplicação</h3>
+<h3 id="requisitos"> :gear: Utilizando a aplicação </h3>
 
 - Requisitos:
   ```
@@ -54,12 +54,11 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
     ```shell
     java -jar -Dspring.profiles.active=localdebug blue-bank-0.0.1-SNAPSHOT.jar
     ```
-     
-  <hr>
-  
+
+<hr>  
   
 <h3 id="db"> :open_file_folder: Banco de Dados</h3>
-<h4 id="der">Diagrama de entidade de relacionamento: </h4>
+<h4 id="der">Diagrama de entidade de relacionamento (DER): </h4>
 <img src="./db/der.png" width="100%" />
 
 - <a target="_blank" href="./db/blueBank6.sql"> Script SQL do banco de dados</a>
@@ -116,7 +115,7 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 
 <hr>
 
-<h3 id="aws-swagger">:scroll: Swagger UI</h3>
+<h3 id="swagger">:scroll: Swagger UI</h3>
 
 - Acesso local
   - http://localhost:8080/swagger-ui.html#
@@ -138,12 +137,12 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 <hr>
 
 
-<h3 id="aws-swagger">	:cloud: AWS Cloud </h3>
+<h3 id="aws">	:cloud: AWS Cloud </h3>
 
 - Lambda
   <img src="./assets/img/aws/lambda-2.png" width="100%" />
   
-- Aws imagens
+- AWS imagens
   - [Página Home](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/pagina-home.jpg?raw=true)
   - [Elastic Beanstalk](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/elastic-beanstalk.jpg?raw=true)
   - [API Gateway](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/api-gateway.jpg?raw=true)
