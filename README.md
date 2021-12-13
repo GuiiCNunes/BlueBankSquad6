@@ -1,9 +1,12 @@
 
-<h1 align="center" > PROJETO BLUE BANK</b> </h1>
-Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 semanas oferecido pelo banco PAN em parceria com a Gama Academy.
-<hr>
+<div align="center">
 
-<h3>:ghost: Equipe Code Poltergeist:</b></h3>
+***PROJETO BLUE BANK*** <br>
+Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 semanas oferecido pelo banco PAN em parceria com a Gama Academy.
+</div>
+
+---
+***Equipe Code Poltergeist:***
 
 - Guilherme Nunes
 - Mariana Fonseca
@@ -11,9 +14,8 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 - Vinicius Menolli
 - Jessica Kopps
 
-<hr>
-
-<h3 id="sumario"> 📑 Tecnologias e recursos utilizados </h3>
+---
+📑 ***Tecnologias e recursos utilizados </h3>***
 
 - Spring Boot (Maven e JDK 11)
 - Banco de Dados Relacional MySQL
@@ -36,9 +38,8 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
   - S3
 
 
-<hr>
-
-<h3 id="requisitos"> :gear: Utilizando a aplicação </h3>
+---
+:gear: ***Utilizando a aplicação***
 
 - Requisitos:
   - Maven
@@ -49,23 +50,27 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
     ```
     mvn clean install -Dskiptests
     ```
+- Caso o código acima não funcione, execute:
+    ```
+    ./mvnw clean install -DskipTests
+    ```
 
-- Para rodar o <b>.jar</b> vá até a pasta do projeto pelo terminal e rode o comando:
+- Para rodar a aplicação, vá até a pasta target do projeto, onde está o arquivo .jar, e o comando:
     ```
     java -jar -Dspring.profiles.active=localdebug blue-bank-0.0.1-SNAPSHOT.jar
     ```
 
-<hr>  
-  
-<h3 id="db"> :open_file_folder: Banco de Dados</h3>
 
-- Diagrama de entidade de relacionamento (DER): </h4>
+---
+***Banco de Dados***
+
+- Diagrama de entidade de relacionamento (DER):
 <img src="./db/der.png" width="100%" />
 
 - <a target="_blank" href="./db/blueBank6.sql"> Script SQL do banco de dados</a>
-<hr>
 
-<h3 id="endpoints"> 🔌 Endpoints</h3>
+---
+🔌 ***Endpoints***
 
 - URL para acesso local:
   - http://localhost:8080
@@ -114,9 +119,8 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
 | POST   | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/salvar  | Realizar transação. Usar tipo: deposito/transferencia/saque |
 | GET    | https://8gno5jdvk7.execute-api.us-east-2.amazonaws.com/blueBank/transacao/listar   | Listar histórico de transações |
 
-<hr>
-
-<h3 id="swagger">:scroll: Documentação Swagger UI</h3>
+---
+:scroll: ***Documentação Swagger UI***
 
 - Acesso local
   - http://localhost:8080/swagger-ui.html#
@@ -135,10 +139,8 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
    - [Transação Controller](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-transacao.png?raw=true)
    - [Models](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/swagger/swagger-models.png?raw=true)
 
-<hr>
-
-
-<h3 id="aws">	:cloud: AWS Cloud </h3>
+---
+:cloud: ***AWS Cloud***
 
 - Lambda
   <img src="./assets/img/aws/lambda-2.png" width="100%" />
@@ -153,6 +155,6 @@ Desafio final do PAN Academy, um curso de formação JAVA e AWS cloud de 10 sema
   - [Code Build](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-build.jpg?raw=true)
   - [Code Pipeline](https://github.com/GuiiCNunes/BlueBankSquad6/blob/main/assets/img/aws/code-pipeline.jpg?raw=true)
   
-<hr>
-<h4 id="der">Apresentação do Desafio final </h4>
+---
+***Apresentação do Desafio final***
 - <a target="_blank" href="./Apresentacao_CODE_POLTERGEIST.pdf"> Confira nossa apresentação</a>
